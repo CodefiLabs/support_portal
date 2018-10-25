@@ -1,0 +1,2 @@
+class Priorty < ApplicationRecord
+end
