@@ -1,0 +1,38 @@
+<%= form_for(@agency) do |f| %>
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :address1 %>
+        <%= f.text_field :address1 %>
+      </li>
+      <li>
+        <%= f.label :address2 %>
+        <%= f.text_field :address2 %>
+      </li>
+      <li class="required">
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </li>
+      <li class="required">
+        <%= f.label :state %>
+        <%= f.text_field :state %>
+      </li>
+      <li class="required">
+        <%= f.label :zip %>
+        <%= f.text_field :zip %>
+      </li>
+      <li>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", root_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>

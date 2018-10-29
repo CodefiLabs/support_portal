@@ -42,7 +42,7 @@ private
 
 def agency_params
   params.require(:agency)
-  permit(:name, :address1, :address2, :city, :state, :zip, :phone)
+  .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
 end
 
 def set_agency
