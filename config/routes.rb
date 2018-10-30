@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to: "pages#index"
   get 'pricing' => "pages#pricing"
   get 'dashboard' => "pages#dashboard"
+<<<<<<< HEAD
   get 'priorities' => "pages#priorities"
   get 'discussions' => "pages#discussions"
+=======
+
+  
+>>>>>>> master
 end
