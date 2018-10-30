@@ -68,3 +68,8 @@ footer {
     font-weight: normal;
     margin-bottom: 0;
 }
+.user-table{
+    background-color: #fff;
+    z-index: 4;
+    padding: 90px;
+}

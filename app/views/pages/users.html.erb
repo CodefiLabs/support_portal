@@ -1,0 +1,47 @@
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+            <div class="user-table">
+<% if user_signed_in? %>
+
+  <!-- <div>Signed in as... <%= current_user.email %></div> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tickets Open/Closed</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Company</th>
+      <th scope="col">Title</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% i = 0  %>
+      <% @users.each do |user| i = i+1 %>
+      <tr>
+      <th scope="row"><%=i%></th>
+      <td>Number of tickets</td>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.company %></td>
+      <td><%= user.job_title %></td>
+      <td><%= user.phone %></td>
+      </tr>
+      <% end %>
+
+  </tbody>
+</table>
+
+
+<% end %>
+</div>
+</div>
+</div>
+</div>
+<%= render 'layouts/footer' %>
