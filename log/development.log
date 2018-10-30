@@ -6481,3 +6481,576 @@ Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms)
 >>>>>>> master
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-29 18:20:55 -0500
+  [1m[35m (40.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 392ms (Views: 385.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:21:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (269.7ms)
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `header' for #<#<Class:0x007fa5c2f88440>:0x007fa5c2f72de8>
+Did you mean?  headers):
+    1: <%= header %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174958652260'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:22:12 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partial/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render "partial/header" %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174978015620'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:22:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partial/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render "partial/header" %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174958719360'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:22:46 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partials/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render "partials/header" %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70175008171920'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:22:55 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partials/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render "partials/header" %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70175026529640'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:23:28 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partial/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render "partial/header" %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174967234900'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:24:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partials/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render 'partials/header' %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174976562240'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:24:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial partials/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render 'partials/header' %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174957545220'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:25:27 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial devise/sessions/_header, devise/_header, application/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render 'header' %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70175007282100'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:26:06 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial devise/sessions/_header, devise/_header, application/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jeffgipson/Desktop/support_portal/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise_invitable-1.7.5/app/views"
+  * "/Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/devise-4.5.0/app/views"
+):
+    1: <%= render 'header' %>
+    2: <div class="container-fluid h-100vh main loginwrapper">
+    3:   <span class="notice"><%= notice %></span>
+    4:   <span class="alert"><%= alert %></span>
+  
+app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174958400300'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:26:55 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 92ms (Views: 90.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:33:12 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:44:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 63ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:47:26 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:48:16 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 75ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:49:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 92ms (Views: 91.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:50:57 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:51:12 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 63ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:51:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:53:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:54:37 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 71ms (Views: 70.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:55:16 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 75ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:55:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:57:19 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 84ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:59:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 18:59:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 90ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:00:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:02:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:03:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:04:59 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:05:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:07:00 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:18:22 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jeffgipson/Desktop/support_portal/app/views/layouts/_header.html.erb:7: syntax error, unexpected ',', expecting ')'
+ession_path, method: :delete), :class => "signin_button"  );
+                              ^
+/Users/jeffgipson/Desktop/support_portal/app/views/layouts/_header.html.erb:9: syntax error, unexpected ',', expecting ')'
+n In', new_user_session_path), :class => "signin_button"  );
+                              ^):
+  
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/layouts/_header.html.erb:9: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174984268460'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:19:24 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jeffgipson/Desktop/support_portal/app/views/layouts/_header.html.erb:7: syntax error, unexpected ',', expecting ')'
+ession_path, method: :delete), :class => "signin_button"  );
+                              ^
+/Users/jeffgipson/Desktop/support_portal/app/views/layouts/_header.html.erb:9: syntax error, unexpected ',', expecting ')'
+n In', new_user_session_path), :class => "signin_button"  );
+                              ^):
+  
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/layouts/_header.html.erb:9: syntax error, unexpected ',', expecting ')'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70175007491020'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:24:43 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 70ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:25:01 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 78ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:25:21 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:25:36 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 83ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:26:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:26:26 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pricing" for 127.0.0.1 at 2018-10-29 19:27:00 -0500
+Processing by PagesController#pricing as HTML
+  Rendering pages/pricing.html.erb within layouts/application
+  Rendered pages/pricing.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pricing" for 127.0.0.1 at 2018-10-29 19:29:12 -0500
+Processing by PagesController#pricing as HTML
+  Rendering pages/pricing.html.erb within layouts/application
+  Rendered pages/pricing.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:29:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (247.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (249.4ms)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pricing' for #<#<Class:0x007fa5c2f88440>:0x007fa5c6036790>
+Did you mean?  pricing_url):
+    3:   <div class="row">
+    4:     <div class="col-sm-4 logo"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></div>
+    5:     <div class="col-sm-5"></div>
+    6:     <div class="col-sm-3 loginlink float-left pull-left">  <%= link_to('Pricing', pricing, class: 'navitem')  %> <% if user_signed_in? %>
+    7:     <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>
+    8:     <% else %>
+    9:     <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
+  
+app/views/layouts/_header.html.erb:6:in `_app_views_layouts__header_html_erb__528255079567948749_70174980494840'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb___191310055277747780_70174984218640'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:29:36 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:29:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:30:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 66ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pricing" for 127.0.0.1 at 2018-10-29 19:31:08 -0500
+Processing by PagesController#pricing as HTML
+  Rendering pages/pricing.html.erb within layouts/application
+  Rendered pages/pricing.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:32:07 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 107ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-29 19:33:13 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+

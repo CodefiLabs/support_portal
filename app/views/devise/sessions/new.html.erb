@@ -1,17 +1,6 @@
+
 <div class="container-fluid h-100vh main loginwrapper">
-  <span class="notice"><%= notice %></span>
-  <span class="alert"><%= alert %></span>
-<div class="loginlink">
-  <% if user_signed_in? %>
-<li>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-</li>
-<% else %>
-<li>
-<%= link_to('Login', new_user_session_path)  %>
-</li>
-<% end %>
-</div>
+  <%= render 'layouts/header' %>
     <div class="row align-items-center h-100">
         <div class="col-sm-4 mx-auto login">
             <div class="login_box">
