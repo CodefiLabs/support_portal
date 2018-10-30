@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_033258) do
+ActiveRecord::Schema.define(version: 2018_10_30_012531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "internal_notes", force: :cascade do |t|
+    t.integer "commentor_id"
+    t.integer "ticket_id"
+  end
+  
   create_table "discussions", force: :cascade do |t|
     t.text "note"
     t.datetime "created_at", null: false

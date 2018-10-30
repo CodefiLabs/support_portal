@@ -1,0 +1,2 @@
+module InternalNotesHelper
+end
