@@ -1,23 +1,7 @@
-<%= form_for(@agency) do |f| %>
 <h1><%= @agency.name %></h1>
-<ol>
-      <li>
-        <%= @agency.address1 %>
-      </li>
-      <li>
-        <%= @agency.address2 %>
-      </li>
-      <li>
-        <%= @agency.city %>
-      </li>
-      <li>
-        <%= @agency.state %>
-      </li>
-      <li>
-        <%= @agency.zip %>
-      </li>
-      <li>
-        <%= @agency.phone %>
-      </li>
-    </ol>
-<% end %>
+<ul>
+<li><strong>Contact:</strong> <%= @agency.phone %></li>
+        <li><strong>Address:</strong><%= @agency.address1 %><br></li>
+        <% if @agency.address2.empty? == false%><li><%=@agency.address2%></li>
+        <% end %>
+        <%= @agency.city %>,<%= @agency.state %> <%= @agency.zip %>

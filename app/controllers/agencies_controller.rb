@@ -2,6 +2,7 @@ class AgenciesController < ApplicationController
 before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   def index
+    @agencies = Agency.all
   end
 
   def show

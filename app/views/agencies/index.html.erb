@@ -1,0 +1,5 @@
+<ol>
+<% @agencies.each do |agency| %>
+<li><a href="../agencies/<%= agency.id %>"><%= agency.name %></li>
+  <% end %>
+  <ol>
