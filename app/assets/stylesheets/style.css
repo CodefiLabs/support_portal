@@ -2,8 +2,7 @@
     padding: 12px;
     background-color: rgba(190,220,0,0.59);
     z-index: 4;
-    position: relative;
-    margin-top: -400px;
+    margin-top: 200px;
 }
 
 .loginwrapper {
@@ -56,4 +55,16 @@ color:#fff;
 .navitem {
     color: #252525!important;
     padding-right: 10px;
+}
+footer {
+    background-color: #222;
+    color: #999;
+    padding: 25px 0 20px 0;
+    font-size: 12px;
+    width: 100%;
+}
+#mc_embed_signup h4 {
+    color: #72BE49;
+    font-weight: normal;
+    margin-bottom: 0;
 }
