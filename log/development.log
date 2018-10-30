@@ -760,3 +760,107 @@ Migrating to CreateInternalNote (20181030002125)
   ↳ bin/rails:9
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(844161702275302635)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropTableInternalNotes (20181030012531)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE "internal_notes"[0m
+  ↳ db/migrate/20181030012531_drop_table_internal_notes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030012531"]]
+  ↳ bin/rails:9
+  [1m[35m (36.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(844161702275302635)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(844161702275302635)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateInternalNotes (20181030012334)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (127.7ms)[0m  [1m[35mCREATE TABLE "internal_notes" ("id" bigserial primary key, "commentor_id" integer, "ticket_id" integer, "note" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181030012334_create_internal_notes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181030012334"]]
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(844161702275302635)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-10-29 20:29:04 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/richardthemm/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1093ms (Views: 1074.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/internal_notes" for 127.0.0.1 at 2018-10-29 20:29:12 -0500
+Processing by InternalNotesController#index as HTML
+  Rendering internal_notes/index.html.erb within layouts/application
+  [1m[36mInternalNote Load (3.2ms)[0m  [1m[34mSELECT "internal_notes".* FROM "internal_notes"[0m
+  ↳ app/views/internal_notes/index.html.erb:13
+  Rendered internal_notes/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 154ms (Views: 101.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/internal_notes/new" for 127.0.0.1 at 2018-10-29 20:29:15 -0500
+Processing by InternalNotesController#new as HTML
+  Rendering internal_notes/new.html.erb within layouts/application
+  Rendered internal_notes/_form.html.erb (154.8ms)
+  Rendered internal_notes/new.html.erb within layouts/application (157.8ms)
+Completed 200 OK in 261ms (Views: 237.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/internal_notes" for 127.0.0.1 at 2018-10-29 20:29:18 -0500
+Processing by InternalNotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6tXbHCnf6iH/m/LRpIxWXfuAh42oY55NaaB/+Ua7nQu+0N+wrjziB1Y2yRxEVnOnhq4if+l3F1VvT4fT8I6ZqA==", "commit"=>"Create Internal note"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/internal_notes_controller.rb:30
+  [1m[36mInternalNote Create (17.9ms)[0m  [1m[32mINSERT INTO "internal_notes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-30 01:29:18.189694"], ["updated_at", "2018-10-30 01:29:18.189694"]]
+  ↳ app/controllers/internal_notes_controller.rb:30
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/internal_notes_controller.rb:30
+Redirected to http://localhost:3000/internal_notes/1
+Completed 302 Found in 48ms (ActiveRecord: 37.1ms)
+
+
+Started GET "/internal_notes/1" for 127.0.0.1 at 2018-10-29 20:29:18 -0500
+Processing by InternalNotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInternalNote Load (0.9ms)[0m  [1m[34mSELECT  "internal_notes".* FROM "internal_notes" WHERE "internal_notes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/internal_notes_controller.rb:67
+  Rendering internal_notes/show.html.erb within layouts/application
+  Rendered internal_notes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 110ms (Views: 97.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/internal_notes" for 127.0.0.1 at 2018-10-29 20:29:20 -0500
+Processing by InternalNotesController#index as HTML
+  Rendering internal_notes/index.html.erb within layouts/application
+  [1m[36mInternalNote Load (0.7ms)[0m  [1m[34mSELECT "internal_notes".* FROM "internal_notes"[0m
+  ↳ app/views/internal_notes/index.html.erb:13
+  Rendered internal_notes/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 95ms (Views: 91.8ms | ActiveRecord: 0.7ms)
+
+
