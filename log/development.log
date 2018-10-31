@@ -7727,3 +7727,116 @@ Processing by PagesController#users as HTML
 Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/users/" for 127.0.0.1 at 2018-10-30 23:16:25 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#users as HTML
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (220.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/pages/users.html.erb:25
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered pages/users.html.erb within layouts/application (227.8ms)
+Completed 200 OK in 277ms (Views: 266.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2018-10-30 23:17:57 -0500
+Processing by PagesController#users as HTML
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (22.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/users.html.erb:25
+  [1m[35m (81.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/users.html.erb:47
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered pages/users.html.erb within layouts/application (118.2ms)
+Completed 200 OK in 157ms (Views: 69.0ms | ActiveRecord: 85.5ms)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2018-10-30 23:18:00 -0500
+Processing by PagesController#users as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/pages/users.html.erb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/users.html.erb:47
+  Rendered layouts/_footer.html.erb (0.6ms)
+  Rendered pages/users.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?page=3" for 127.0.0.1 at 2018-10-30 23:18:02 -0500
+Processing by PagesController#users as HTML
+  Parameters: {"page"=>"3"}
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (4.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  ↳ app/views/pages/users.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/users.html.erb:47
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered pages/users.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 83ms (Views: 77.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2018-10-30 23:18:04 -0500
+Processing by PagesController#users as HTML
+  Parameters: {"page"=>"2"}
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/pages/users.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/users.html.erb:47
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered pages/users.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users?page=1" for 127.0.0.1 at 2018-10-30 23:18:04 -0500
+Processing by PagesController#users as HTML
+  Parameters: {"page"=>"1"}
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/users.html.erb:25
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/users.html.erb:47
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered pages/users.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?page=1" for 127.0.0.1 at 2018-10-30 23:18:49 -0500
+  
+SyntaxError (/Users/jeffgipson/Desktop/support_portal/app/controllers/pages_controller.rb:12: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/controllers/pages_controller.rb:12: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users?page=1" for 127.0.0.1 at 2018-10-30 23:19:13 -0500
+Processing by PagesController#users as HTML
+  Parameters: {"page"=>"1"}
+  Rendering pages/users.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (27.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/pages/users.html.erb:25
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered pages/users.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 68ms (Views: 58.0ms | ActiveRecord: 7.2ms)
+
+

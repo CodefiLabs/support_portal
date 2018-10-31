@@ -5,7 +5,9 @@ ruby '2.4.1'
 
 gem 'font-awesome-rails'
 
-gem 'devise_invitable'
+#gem 'devise_invitable'
+
+gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
