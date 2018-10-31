@@ -8,13 +8,13 @@ class Agency < ApplicationRecord
     message: "must be a valid U.S. zip code"
   }
   validates :state, presence: true
-  
+
   validates :phone, format: {
     with: /\A\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*\z/,
     message: "must be a valid phone number"
   }
 
-  has_many :clients, dependent: :destroy
+  has_many :clients, :through => :agencies_clients
   has_many :users, dependent: :destroy
   has_many :priorities, dependent: :destroy
 end
