@@ -11,6 +11,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Edit</th>
       <th scope="col">Tickets Open/Closed</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
@@ -18,13 +19,16 @@
       <th scope="col">Company</th>
       <th scope="col">Title</th>
       <th scope="col">Phone</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
      <% i = 0  %>
       <% @users.each do |user| i = i+1 %>
+      <% edit_url = "/users/#{user.id}/edit" %>
       <tr>
       <th scope="row"><%=i%></th>
+       <td><a href="/users/<%=user.id%>/edit"><%=fa_icon "edit"%></a></td>
       <td>Number of tickets</td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
@@ -32,6 +36,7 @@
       <td><%= user.company %></td>
       <td><%= user.job_title %></td>
       <td><%= user.phone %></td>
+      <td><%= fa_icon "trash" %></td>
       </tr>
       <% end %>
 
