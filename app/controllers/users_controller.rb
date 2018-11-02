@@ -1,33 +1,26 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 10)
+  end
+
   def users
     @users = User.all
     @users = User.paginate(:page => params[:page], :per_page => 10)
   end
 
-  def show
-   @user = User.find(params[:id])
- end
-
- def new
-   @user = User.new
- end
-
- def create
-   @user = User.new(user_params)
-   if @user.save
-     log_in @user
-     flash[:success] = "Welcome to the Sample App!"
-     redirect_to @user
-   else
-     render 'new'
-   end
- end
 
  def edit
    @user = User.find(params[:id])
  end
 
+ def destroy
+   @users = User.find(params[:id])
+   @users.destroy
+
+   redirect_to users_path
+ end
  private
 
    def user_params
