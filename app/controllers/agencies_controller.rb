@@ -41,13 +41,13 @@ before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
 private
 
-def agency_params
-  params.require(:agency)
-  .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
-end
+  def agency_params
+    params.require(:agency)
+    .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
+  end
 
-def set_agency
-  @agency = Agency.find(params[:id])
-end
+  def set_agency
+    @agency = Agency.find(params[:id])
+  end
 
 end
