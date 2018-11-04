@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def users
     @users = User.all
-    @users = User.paginate(:page => params[:page], :per_page => 10)
+    #@users = User.paginate(:page => params[:page], :per_page => 10)
   end
 
 
@@ -21,11 +21,16 @@ class UsersController < ApplicationController
 
    redirect_to users_path
  end
+ def update
+    @users = User.find(params[:id])
+    @users.update_attributes(params.require(:user).permit(:first_name, :last_name, :email, :company, :job_title, :phone, :role))
+
+    redirect_to users_path
+end
  private
 
    def user_params
-     params.require(:user).permit(:name, :email, :password,
-                                :password_confirmation)
+     params.require(:user).permit(:first_name, :last_name, :email, :company, :job_title, :phone, :role)
    end
 
 
