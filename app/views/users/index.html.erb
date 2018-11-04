@@ -4,15 +4,16 @@
         <div class="col-sm-12 mx-auto user-table">
             <div class="user-table">
 <% if user_signed_in? %>
+<% if current_user.role == "superadmin" %>
 <script>
 $(document).ready(function() {
-    $('#example').DataTable();
+    $('#userslist').DataTable();
 } );
 </script>
 
   <!-- <div>Signed in as... <%= current_user.email %></div> -->
 
-<table id="example" class="table table-striped table-bordered">
+<table id="userslist" class="table table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -44,18 +45,17 @@ $(document).ready(function() {
       <td><%= user.job_title %></td>
       <td><%= number_to_phone(user.phone, delimiter: "-", area_code: true) %></td>
       <td><%= link_to user_path(user),method: :delete, data: { confirm: 'Are you sure?' } do %><%= fa_icon 'trash' %><% end %></td>
-
       </tr>
       <% end %>
 
   </tbody>
 </table>
-
-
+<% else %>
+<h3>You must be signed in as superadmin to view the users list</h3>
+<% end %>
 <% end %>
 </div>
 </div>
 </div>
 </div>
-<%= will_paginate @users %>
 <%= render 'layouts/footer' %>
