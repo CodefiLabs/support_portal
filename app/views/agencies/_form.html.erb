@@ -1,6 +1,6 @@
 <%= form_for(@agency) do |f| %>
   <fieldset>
-    <ol>
+    <ul>
       <li class="required">
         <%= f.label :name %>
         <%= f.text_field :name, autofocus: true %>
@@ -29,7 +29,7 @@
         <%= f.label :phone %>
         <%= f.text_field :phone %>
       </li>
-    </ol>
+    </ul>
     <p>
       <%= f.submit %>
       <%= link_to "Cancel", root_path, class: 'button' %>
