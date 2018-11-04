@@ -4,4 +4,4 @@
         <li><strong>Address:</strong><%= @agency.address1 %><br></li>
         <% if @agency.address2.empty? == false%><li><%=@agency.address2%></li>
         <% end %>
-        <%= @agency.city %>,<%= @agency.state %> <%= @agency.zip %>
+        <%= @agency.city %>, <%= @agency.state %> <%= @agency.zip %>
