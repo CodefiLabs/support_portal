@@ -1,4 +1,5 @@
 <%= form_for(@agency) do |f| %>
+<%= @agency.errors.full_messages.first if @agency.errors.any? %>
   <fieldset>
     <ul>
       <li class="required">

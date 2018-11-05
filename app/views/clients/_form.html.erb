@@ -1,4 +1,5 @@
 <%= form_for(@client) do |f| %>
+<%= @client.errors.full_messages.first if @client.errors.any? %>
   <fieldset>
     <ol>
       <li class="required">

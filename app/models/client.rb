@@ -4,7 +4,7 @@ class Client < ApplicationRecord
     validates :address1, presence: true
     validates :city, presence: true
     validates :zip, presence: true, format: {
-      with: /\d{5}(\-?\d{4})?/,
+      with: /\A\d{5}(\-?\d{4})?\z/,
       message: "must be a valid U.S. zip code"
     }
 
@@ -17,5 +17,7 @@ class Client < ApplicationRecord
       with: /\A\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*\z/,
       message: "must be a valid phone number"
     }
+
+  has_many :agencies, :through => :agencies_clients
 
   end

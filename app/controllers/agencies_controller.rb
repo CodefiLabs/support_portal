@@ -33,21 +33,19 @@ before_action :set_agency, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-    def destroy
       @agency.destroy
-      redirect_to root_url, alert: "Agency successfully deleted."
-    end
+      redirect_to agencies_url, alert: "Agency successfully deleted."
   end
 
 private
 
-def agency_params
-  params.require(:agency)
-  .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
-end
+  def agency_params
+    params.require(:agency)
+    .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
+  end
 
-def set_agency
-  @agency = Agency.find(params[:id])
-end
+  def set_agency
+    @agency = Agency.find(params[:id])
+  end
 
 end
