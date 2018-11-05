@@ -15938,3 +15938,259 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-11-05 17:28:46 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (276.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:34
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (285.4ms)
+Completed 200 OK in 449ms (Views: 428.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:28:57 -0600
+  
+ActionController::RoutingError (uninitialized constant Users::InvitationsController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:33:00 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for "test1":String):
+    63:            <tbody>
+    64:                <% @users.each do |user| %>
+    65:                <tr>
+    66:                <th scope="row"><%=user.id%></th>
+    67:                <td>Number of tickets</td>
+    68:                <td><%= user.first_name %></td>
+    69:                <td><%= user.last_name %></td>
+  
+app/views/devise/invitations/new.html.erb:66:in `block in _app_views_devise_invitations_new_html_erb___425502708488615683_70314400369740'
+app/views/devise/invitations/new.html.erb:64:in `each'
+app/views/devise/invitations/new.html.erb:64:in `_app_views_devise_invitations_new_html_erb___425502708488615683_70314400369740'
+app/controllers/users/invitations_controller.rb:4:in `new'
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:33:26 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/devise/invitations/new.html.erb:64
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 101ms (Views: 80.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:43:36 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/devise/invitations/new.html.erb:70
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 83ms (Views: 79.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:45:28 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/devise/invitations/new.html.erb:70
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 84ms (Views: 82.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:46:44 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/devise/invitations/new.html.erb:64
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 79ms (Views: 76.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/invitation/new" for 127.0.0.1 at 2018-11-05 17:47:46 -0600
+Processing by Users::InvitationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/invitations/new.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered devise/invitations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/invitation" for 127.0.0.1 at 2018-11-05 17:49:36 -0600
+Processing by Users::InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mnWaNCkT8hIxFQT/EDNti4tK43Zmjwu9noEjEB0M7nvdKKwiDjN72VoMm3KaCzqyAMZSSph7dKAmUVVxrw3Itw==", "user"=>{"role"=>"agencyadmin", "first_name"=>"Jeff", "last_name"=>"Gipson", "email"=>"jeff@recruiterswebsites.com2", "company"=>"", "job_title"=>"", "phone"=>"5738371315"}, "commit"=>"Send an invitation"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jeff@recruiterswebsites.com2"], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."invitation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["invitation_token", "25976d61546840da629b468b05a80bc3aba9695edc3adccfe95653b7e98eba1a"], ["LIMIT", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "phone", "company", "job_title", "created_at", "updated_at", "invitation_token", "invitation_created_at", "invitation_sent_at", "invited_by_type", "invited_by_id", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["email", "jeff@recruiterswebsites.com2"], ["encrypted_password", "$2a$11$Kk4cdrWqep5nhX.Ah2UAf.F38/m9RezI61yEXkuNBIaT9fr.ToXCm"], ["first_name", "Jeff"], ["last_name", "Gipson"], ["phone", "5738371315"], ["company", ""], ["job_title", ""], ["created_at", "2018-11-05 23:49:36.911983"], ["updated_at", "2018-11-05 23:49:36.911983"], ["invitation_token", "25976d61546840da629b468b05a80bc3aba9695edc3adccfe95653b7e98eba1a"], ["invitation_created_at", "2018-11-05 23:49:36.910917"], ["invitation_sent_at", "2018-11-05 23:49:36.910917"], ["invited_by_type", "User"], ["invited_by_id", 10], ["role", 1]]
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/jeffgipson/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/invitation_instructions.html.erb
+  Rendered devise/mailer/invitation_instructions.html.erb (1.1ms)
+  Rendering devise/mailer/invitation_instructions.text.erb
+  Rendered devise/mailer/invitation_instructions.text.erb (0.8ms)
+Devise::Mailer#invitation_instructions: processed outbound mail in 62.3ms
+Sent mail to jeff@recruiterswebsites.com2 (81.9ms)
+Date: Mon, 05 Nov 2018 17:49:36 -0600
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jeff@recruiterswebsites.com2
+Message-ID: <5be0d710ef6cb_f7f43ff3591dc3608817@Jeffs-MacBook-Pro.local.mail>
+Subject: Invitation instructions
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5be0d710ee5bb_f7f43ff3591dc3608807";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5be0d710ee5bb_f7f43ff3591dc3608807
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello jeff@recruiterswebsites.com2
+
+Someone has invited you to http://localhost:3000/, you can accept it through the link below.
+
+http://localhost:3000/users/invitation/accept?invitation_token=Zhd5sfvFZv31JVW91QDN
+
+
+If you don't want to accept the invitation, please ignore this email. Your account won't be created until you access the link above and set your password.
+
+----==_mimepart_5be0d710ee5bb_f7f43ff3591dc3608807
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello jeff@recruiterswebsites.com2</p>
+
+<p>Someone has invited you to http://localhost:3000/, you can accept it through the link below.</p>
+
+<p><a href="http://localhost:3000/users/invitation/accept?invitation_token=Zhd5sfvFZv31JVW91QDN">Accept invitation</a></p>
+
+
+<p>If you don&#39;t want to accept the invitation, please ignore this email. Your account won&#39;t be created until you access the link above and set your password.</p>
+
+----==_mimepart_5be0d710ee5bb_f7f43ff3591dc3608807--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 397ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-05 17:49:37 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-05 17:49:59 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:6
+  Rendered layouts/_header.html.erb (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:34
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.6ms)
+
+
