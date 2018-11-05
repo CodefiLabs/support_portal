@@ -7,7 +7,6 @@ class Agency < ApplicationRecord
     with: /\A\d{5}(\-?\d{4})?\z/,
     message: "must be a valid U.S. zip code"
   }
-<<<<<<< HEAD
 
   validates :state, inclusion: { in: STATES }
   validates :state, presence: true
