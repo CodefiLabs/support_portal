@@ -4,11 +4,9 @@
         <li><strong>Address:</strong><%= @client.address1 %><br></li>
         <% if @client.address2.empty? == false%><li><%=@client.address2%></li>
         <% end %>
-        <%= @client.city %>, <%= @client.state %> <%= @client.zip %>
-
-    <nav>
-        <%= link_to 'Edit', edit_client_path(@client), class: 'button' %>
+        <%= @client.city %>, <%= @client.state %> <%= @client.zip %><br>
+        <%= link_to 'Edit', edit_client_path(@client), class: 'button' %>|
         <%= link_to 'Delete', @client,
                     class: 'button',
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
-    </nav>
+                    method: :delete, data: { confirm: 'Are you sure?' } %>|
+      <a href="../clients">View All</a>
