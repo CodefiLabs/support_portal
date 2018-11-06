@@ -12,6 +12,7 @@
 /log/*
 !/log/.keep
 /tmp
+/log*
 ./.rvmrc
 ./db/config/seeds.rb
 ./public/uploads/tmp/*

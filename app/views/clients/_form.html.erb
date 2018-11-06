@@ -1,0 +1,39 @@
+<%= form_for(@client) do |f| %>
+<%= @client.errors.full_messages.first if @client.errors.any? %>
+  <fieldset>
+    <ol>
+      <li class="required">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+      </li>
+      <li class="required">
+        <%= f.label :address1 %>
+        <%= f.text_field :address1 %>
+      </li>
+      <li>
+        <%= f.label :address2 %>
+        <%= f.text_field :address2 %>
+      </li>
+      <li class="required">
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </li>
+      <li class="required">
+        <%= f.label :state %>
+        <%= f.select :state, Client::STATES, prompt: "Select" %>
+      </li>
+      <li class="required">
+        <%= f.label :zip %>
+        <%= f.text_field :zip %>
+      </li>
+      <li>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+      </li>
+    </ol>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", root_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
