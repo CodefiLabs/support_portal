@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_155515) do
+ActiveRecord::Schema.define(version: 2018_10_30_192321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,29 @@ ActiveRecord::Schema.define(version: 2018_10_25_155515) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "agencies_clients", force: :cascade do |t|
+    t.bigint "agencies_id"
+    t.bigint "clients_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agencies_id"], name: "index_agencies_clients_on_agencies_id"
+    t.index ["clients_id"], name: "index_agencies_clients_on_clients_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
+    t.bigint "agency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agency_id"], name: "index_clients_on_agency_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +67,6 @@ ActiveRecord::Schema.define(version: 2018_10_25_155515) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
+  add_foreign_key "agencies_clients", "clients", column: "clients_id"
 end
