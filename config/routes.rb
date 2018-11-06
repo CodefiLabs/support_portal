@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  # get "projects" => "projects#index"
-  # get "projects/:id" => "projects#show"
-  # get "projects/:id/edit" => "projects#edit"
-  # patch "projects/:id" => "projects#update"
-  resources :projects
+ resources :clients
+ devise_for :users, :controllers => { :invitations => 'users/invitations' }
+ resources :users
+ resources :internal_notes
+ resources :projects
+ resources :categories
+ # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ root to: "pages#index"
+ get 'pricing' => "pages#pricing"
+ get 'dashboard' => "pages#dashboard"
+ resources :agencies
 
-  # get "categories" => "categories#index"
-  # get "categories/:id" => "categories#show"
-  # get "categories/:id/edit" => "categories#edit"
-  # patch "categories/:id" => "categories#update"
-  resources :categories
-
+ #get 'users/:id/edit' => 'users#edit', :as => :user
+ get 'priorities' => "pages#priorities"
+ get 'discussions' => "pages#discussions"
 end
