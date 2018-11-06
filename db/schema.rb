@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2018_11_02_013504) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "agencies", force: :cascade do |t|
@@ -35,6 +34,12 @@ ActiveRecord::Schema.define(version: 2018_11_02_013504) do
     t.datetime "updated_at", null: false
     t.index ["agencies_id"], name: "index_agencies_clients_on_agencies_id"
     t.index ["clients_id"], name: "index_agencies_clients_on_clients_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "clients", force: :cascade do |t|
@@ -71,6 +76,13 @@ ActiveRecord::Schema.define(version: 2018_11_02_013504) do
   end
 
   create_table "priorties", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
