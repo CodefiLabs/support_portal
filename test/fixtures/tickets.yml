@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  integer: MyString
+  created_at: 2018-11-06 08:38:36
+  update_at: 2018-11-06 08:38:36
+  client_id: MyString
+  reference: MyString
+  project_id: MyString
+  reference: MyString
+  created_by: MyString
+  reference: MyString
+  internal_status: MyString
+  external_status: MyString
+  uploads: 
+  title: MyString
+  start_time: MyString
+  datetime: MyString
+  end_time: 2018-11-06 08:38:36
+  total_time: 1.5
+  adjusted_time: 1.5
+  priority_id: 
+  is_deleted: false
+
+two:
+  id: MyString
+  integer: MyString
+  created_at: 2018-11-06 08:38:36
+  update_at: 2018-11-06 08:38:36
+  client_id: MyString
+  reference: MyString
+  project_id: MyString
+  reference: MyString
+  created_by: MyString
+  reference: MyString
+  internal_status: MyString
+  external_status: MyString
+  uploads: 
+  title: MyString
+  start_time: MyString
+  datetime: MyString
+  end_time: 2018-11-06 08:38:36
+  total_time: 1.5
+  adjusted_time: 1.5
+  priority_id: 
+  is_deleted: false
