@@ -10,21 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_02_013504) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_30_012531) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "internal_notes", force: :cascade do |t|
     t.integer "commentor_id"
     t.integer "ticket_id"
-  end
-  
-  create_table "discussions", force: :cascade do |t|
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,5 +71,4 @@ ActiveRecord::Schema.define(version: 2018_10_30_012531) do
     t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end
