@@ -2,7 +2,7 @@
     padding: 12px;
     background-color: rgba(190,220,0,0.59);
     z-index: 4;
-    position: relative;
+    margin-top: 200px;
 }
 
 .loginwrapper {
@@ -21,7 +21,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom right,#002f4b,#fff);
+  background-image: linear-gradient(to bottom right,#cacaca,#fff);
   opacity: .6;
 }
 p.notice{
@@ -36,5 +36,40 @@ p.notice{
     color: #3c3c3c;
 }
 .loginlink{
-  list-style: none;
+  float: left;
+  z-index: 9;
+  margin-top: 20px;
+}
+.loginlink a{
+color:#fff;
+}
+
+.logo {
+    z-index: 9;
+}
+.signin_button{
+  background-color: #00807B;
+  z-index: 9;
+  padding:10px;
+}
+.navitem {
+    color: #252525!important;
+    padding-right: 10px;
+}
+footer {
+    background-color: #222;
+    color: #999;
+    padding: 25px 0 20px 0;
+    font-size: 12px;
+    width: 100%;
+}
+#mc_embed_signup h4 {
+    color: #72BE49;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.user-table{
+    background-color: #fff;
+    z-index: 4;
+    padding: 90px;
 }

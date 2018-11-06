@@ -1,0 +1,99 @@
+<footer>
+    <div class="container">
+      <div class="row row-footer">
+        <div class="col-lg-2 col-md-3 col-sm-2 text-right hidden-xs hidden-sm" style="position: relative;">
+          <a href="/"><img alt="Codefi Logo" src="/assets/codefi_logo_white.png" width="170"></a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9">
+            <!-- Begin Wufoo Signup Form -->
+            <div id="mc_embed_signup">
+              <h4>Get the Latest</h4>
+<p>Subscribe to be the first to know about upcoming events, programs, and economic impact.</p>
+<div class="form-wrap">
+
+  <div id="wufoo-rkj0tzw1bqtt2w"><iframe id="wufooFormrkj0tzw1bqtt2w" class="wufoo-form-container" height="175" allowtransparency="true" frameborder="0" scrolling="auto" style="width:100%;border:none" src="https://codefi.wufoo.com/embed/rkj0tzw1bqtt2w/def/embedKey=rkj0tzw1bqtt2w343520&amp;entsource=&amp;referrer=&amp;scrolling=true&amp;header=hide"><a href="https://codefi.wufoo.com/forms/rkj0tzw1bqtt2w/" title="html form">Fill out my Wufoo form!</a></iframe></div>
+  <script type="text/javascript">
+    var rkj0tzw1bqtt2w;(function(d, t) {
+      var s = d.createElement(t), options = {
+      'userName':'codefi',
+      'formHash':'rkj0tzw1bqtt2w',
+      'autoResize':false,
+      'height':'175',
+      'async':true,
+      'host':'wufoo.com',
+      'header':'hide',
+      'ssl':true};
+      s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+      s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { rkj0tzw1bqtt2w = new WufooForm();rkj0tzw1bqtt2w.initialize(options);rkj0tzw1bqtt2w.display(); }
+      catch (e) {}
+    };
+    var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+    })
+    (document, 'script');
+  </script>
+
+</div>
+<div id="response"></div>
+<script>
+
+$('form#mcsubscribe')
+.bind("ajax:beforeSend", function(evt, xhr, settings){
+  var $divResponse = $('div#response');
+
+  // Update the text of the submit button to let the user know stuff is happening.
+  // But first, store the original text of the submit button, so it can be restored when the request is finished.
+  $divResponse.data( 'origText', $divResponse.text() );
+  $divResponse.text( "Adding Email...." );
+
+})
+.bind("ajax:success", function(evt, data, status, xhr){
+  var $form = $(this);
+   var $divResponse = $('div#response');
+
+  // Reset fields and any validation errors, so form can be used again, but leave hidden_field values intact.
+  $form.find('input[type="email"]').val("");
+  $divResponse.html(data.message);
+})
+.bind('ajax:complete', function(evt, xhr, status){
+  var $divResponse = $('div#response');
+})
+.bind("ajax:error", function(evt, xhr, status, error){
+   var $divResponse = $('div#response'),
+      errors,
+      errorText,
+  errorList;
+
+  try {
+    // Populate errorText with the comment errors
+    errors = $.parseJSON(xhr.responseText);
+  } catch(err) {
+    // If the responseText is not valid JSON (like if a 500 exception was thrown), populate errors with a generic error message.
+    errors = {message: "Please reload the page and try again"};
+  }
+
+  // Build an unordered list from the list of errors
+  errorText = "There were errors with the submission. Please reload the page and try again.";
+  errorList = "<ul>"
+  for ( error in errors ) {
+    errorList += "<li>" + error + ': ' + errors[error] + "</li> ";
+  }
+
+  errorList += "</ul>";
+
+  // Insert error list into form
+  $divResponse.html(errorText);
+});
+
+</script>
+
+            </div>
+        </div>
+      </div>
+      <div class="row contact">
+
+
+      </div>
+    </div>
+  </footer>
