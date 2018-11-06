@@ -9,7 +9,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 2018_10_30_192321) do
 
   # These are extensions that must be enabled in order to support this database
@@ -26,16 +25,6 @@ ActiveRecord::Schema.define(version: 2018_10_30_192321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "agencies_clients", force: :cascade do |t|
-    t.bigint "agencies_id"
-    t.bigint "clients_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["agencies_id"], name: "index_agencies_clients_on_agencies_id"
-    t.index ["clients_id"], name: "index_agencies_clients_on_clients_id"
-  end
-
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "address1"
@@ -48,6 +37,31 @@ ActiveRecord::Schema.define(version: 2018_10_30_192321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["agency_id"], name: "index_clients_on_agency_id"
+  end
+  create_table "agencies_clients", force: :cascade do |t|
+    t.bigint "agencies_id"
+    t.bigint "clients_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agencies_id"], name: "index_agencies_clients_on_agencies_id"
+    t.index ["clients_id"], name: "index_agencies_clients_on_clients_id"
+  end
+  create_table "internal_notes", force: :cascade do |t|
+    t.integer "commentor_id"
+    t.integer "ticket_id"
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "priorties", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,7 +77,20 @@ ActiveRecord::Schema.define(version: 2018_10_30_192321) do
     t.string "job_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+    t.index ["invitations_count"], name: "index_users_on_invitations_count"
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
