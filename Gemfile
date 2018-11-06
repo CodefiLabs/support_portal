@@ -5,7 +5,9 @@ ruby '2.4.1'
 
 gem 'font-awesome-rails'
 
-gem 'devise_invitable'
+#gem 'devise_invitable'
+
+gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -41,7 +43,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise_invitable'
 gem 'rolify'
-gem 'sweet-alert2-rails'
+#gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+#gem 'sweet-alert2-rails'
+#gem 'sweet-alert-confirm'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap', '~> 4.0'
+gem 'jquery-datatables'
+#gem 'data-confirm-modal'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
