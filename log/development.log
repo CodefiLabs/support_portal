@@ -137,5 +137,3 @@ Processing by ProjectsController#index as HTML
   Rendering projects/index.html.erb within layouts/application
   Rendered projects/index.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.0ms)
-
-
