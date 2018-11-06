@@ -1,0 +1,122 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integer %>
+    <%= form.text_field :integer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_at %>
+    <%= form.datetime_select :update_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_by %>
+    <%= form.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference %>
+    <%= form.text_field :reference %>
+  </div>
+
+  <div class="field">
+    <%= form.label :internal_status %>
+    <%= form.text_field :internal_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :external_status %>
+    <%= form.text_field :external_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uploads %>
+    <%= form.text_field :uploads %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :datetime %>
+    <%= form.text_field :datetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_time %>
+    <%= form.text_field :total_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adjusted_time %>
+    <%= form.text_field :adjusted_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority_id %>
+    <%= form.text_field :priority_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_deleted %>
+    <%= form.check_box :is_deleted %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
