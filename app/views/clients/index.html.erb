@@ -1,0 +1,6 @@
+<h1>Clients</h1><%= link_to 'Add New Client', new_client_path(@client) %><hr>
+<ol>
+<% @clients.each do |client| %>
+<li><a href="../clients/<%= client.id %>"><%= client.name %></li>
+  <% end %>
+  <ol>
