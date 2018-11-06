@@ -9,12 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 2018_11_02_013504) do
-=======
 ActiveRecord::Schema.define(version: 2018_10_30_192321) do
->>>>>>> 1333f51807342d112c68d5af61ec67feab5fe5db
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
