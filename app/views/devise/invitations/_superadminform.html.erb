@@ -4,9 +4,9 @@
   <%= devise_error_messages! %>
 
 <% resource.class.invite_key_fields.each do |field| -%>
-<%= f.label :'User Role' %>
-<%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-</br>
+
+<%= hidden_field_tag 'role', 'agencyadmin'  %>
+
 <%= f.label :'First Name' %>
 <%= f.text_field :first_name, class: 'form-control' %>
 

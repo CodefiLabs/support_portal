@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+     <% if current_user.role == "superadmin" %>
+        <%= render 'devise/invitations/superadminform' %>
+     <!-- End of superadmin section -->
+
+     <% elsif current_user.role == "agencyadmin" %>
+        <%= render 'devise/invitations/agencyadminform' %>
+     <!-- End of clientadmin section -->
+
+     <% elsif current_user.role == "clientadmin" %>
+        <%= render 'devise/invitations/clientadminform' %>
+     <!-- End of clientadmin section -->
+
+     <% else %>
+        <h3>Please login to invite new users.</h3>
+     <% end %>
+<% end %><!-- End of loggedin user -->

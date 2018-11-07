@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+
+  <% if current_user.role == "superadmin" %>
+    <%= render 'devise/invitations/user_list_all' %>
+
+    <% elsif current_user.role == "agencyadmin" %>
+       <%= render 'devise/invitations/my_users_list' %>
+    <!-- End of clientadmin section -->
+
+    <% elsif current_user.role == "clientadmin" %>
+       <%= render 'devise/invitations/my_users_list' %>
+    <!-- End of clientadmin section -->
+
+    <% else %>
+      <h3>You must be signed in to view the users list</h3>
+    <% end %>
+<% end %>
