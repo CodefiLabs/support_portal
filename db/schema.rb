@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2018_11_02_013504) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "priorties", force: :cascade do |t|
+  create_table "priorities", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false

@@ -1,2 +1,2 @@
-module PriortiesHelper
+module prioritiesHelper
 end
