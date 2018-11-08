@@ -1,0 +1,35 @@
+<h1>Tickets</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-tickets" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="id">Id</th>
+      <th data-data="integer">Integer</th>
+      <th data-data="created_at">Created at</th>
+      <th data-data="update_at">Update at</th>
+      <th data-data="client_id">Client</th>
+      <th data-data="reference">Reference</th>
+      <th data-data="project_id">Project</th>
+      <th data-data="reference">Reference</th>
+      <th data-data="created_by">Created by</th>
+      <th data-data="reference">Reference</th>
+      <th data-data="internal_status">Internal status</th>
+      <th data-data="external_status">External status</th>
+      <th data-data="uploads">Uploads</th>
+      <th data-data="title">Title</th>
+      <th data-data="start_time">Start time</th>
+      <th data-data="datetime">Datetime</th>
+      <th data-data="end_time">End time</th>
+      <th data-data="total_time">Total time</th>
+      <th data-data="adjusted_time">Adjusted time</th>
+      <th data-data="priority_id">Priority</th>
+      <th data-data="is_deleted">Is deleted</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>
+
+<%= link_to 'New Ticket', new_ticket_path %>

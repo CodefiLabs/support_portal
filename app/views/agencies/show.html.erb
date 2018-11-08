@@ -1,0 +1,12 @@
+<h1><%= @agency.name %></h1><hr>
+<ul>
+<li><strong>Contact:</strong> <%= @agency.phone %></li>
+        <li><strong>Address:</strong><%= @agency.address1 %><br></li>
+        <% if @agency.address2.empty? == false%><li><%=@agency.address2%></li>
+        <% end %>
+        <%= @agency.city %>, <%= @agency.state %> <%= @agency.zip %><br>
+        <%= link_to 'Edit', edit_agency_path(@agency), class: 'button' %>|
+        <%= link_to 'Delete', @agency,
+                    class: 'button',
+                    method: :delete, data: { confirm: 'Are you sure?' } %>|
+      <a href="../agencies">View All</a>

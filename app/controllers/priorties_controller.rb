@@ -1,4 +1,4 @@
-class PriortiesController < ApplicationController
+class PrioritiesController < ApplicationController
   def priorities
 
   end

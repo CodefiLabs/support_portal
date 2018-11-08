@@ -1,0 +1,17 @@
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+            <div class="user-table">
+              <% if user_signed_in? %>
+                <% if current_user.role == "superadmin" %>
+                  <%= render 'devise/invitations/user_list_all' %>
+                  <% else %>
+                    <h3>You must be signed in as superadmin to view the users list</h3>
+                  <% end %>
+              <% end %>
+          </div>
+      </div>
+    </div>
+</div>
+<%= render 'layouts/footer' %>
