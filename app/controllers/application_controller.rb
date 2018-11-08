@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
   protected
     def configure_permitted_paramters
 
-        devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :phone, :role, :email, :company, :job_title])
+        devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :phone, :role, :email, :company, :job_title,:agency_id])
 
-        devise_parameter_sanitizer.permit(:invite, keys: [:first_name, :last_name, :phone, :role, :email, :company, :job_title])
+        devise_parameter_sanitizer.permit(:invite, keys: [:first_name, :last_name, :phone, :role, :email, :company, :job_title,:agency_id])
 
     end
 
-  
+
 end

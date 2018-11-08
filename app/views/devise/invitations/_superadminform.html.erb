@@ -1,9 +1,7 @@
 <% agency_name = "" %>
 <script>
-
   $(document).ready(function(){
-    $('#create_agency').click(function(e){
-      e.preventDefault()
+    var inviteUserToAgency = function() {
       var name = $('#default').val()
       $.ajax({
         url:"<%=agencies_path%>",
@@ -16,8 +14,15 @@
           console.log('success!')
         }
       })
+    }
+    $('#create_agency').click(function(e){
+      e.preventDefault()
+      inviteUserToAgency()
     })
-    $('#default').editableSelect({ effects: 'default' });
+    $('#default').editableSelect({ effects: 'default' })
+    $('#default').on("select.editable-select", function(e) {
+      inviteUserToAgency()
+    })
     $("#create_agency").hide()
     $("#default").keyup(function(e){
       if (this.value.length>0) {
@@ -27,10 +32,16 @@
       $("#create_agency").hide()
       }
     })
+    $('#default').change(function(e) {
+
+
+    })
 
   });
 
   </script>
+
+
 
 <h2>Select or create an agency</h2>
 
