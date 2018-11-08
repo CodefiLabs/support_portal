@@ -1,12 +1,59 @@
-<h2>Invite An Agency</h2>
+<% agency_name = "" %>
+<script>
+
+  $(document).ready(function(){
+    $('#create_agency').click(function(e){
+      e.preventDefault()
+      var name = $('#default').val()
+      $.ajax({
+        url:"<%=agencies_path%>",
+        method:'post',
+        action:"#",
+        data:{
+          'agency[name]':name
+        },
+        success: function(data) {
+          console.log('success!')
+        }
+      })
+    })
+    $('#default').editableSelect({ effects: 'default' });
+    $("#create_agency").hide()
+    $("#default").keyup(function(e){
+      if (this.value.length>0) {
+          $("#create_agency").show()
+      }
+      else{
+      $("#create_agency").hide()
+      }
+    })
+
+  });
+
+  </script>
+
+<h2>Select or create an agency</h2>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
-
 <% resource.class.invite_key_fields.each do |field| -%>
 
-<%= hidden_field_tag 'role', 'agencyadmin'  %>
+<small>Please choose from the list of agencies or create a new agency to proceed.</small>
+  <select id="default">
+    <%= @agencies.each  do |agency|  %>
+  	<option><%=" #{agency.name} (#{agency.id})" %></option>
+  <% end %>
+  </select>
 
+  <button data-remote="true" id="create_agency">Create Agency</button>
+  <hr>
+<h2>Invite an agency admin</h2>
+
+<%= hidden_field_tag 'role', 'agencyadmin'  %>
+<%= hidden_field_tag 'agency_name', "agencyname" %>
+<%= f.hidden_field :company %>
+<%= f.hidden_field :agency_id %>
+<br>
 <%= f.label :'First Name' %>
 <%= f.text_field :first_name, class: 'form-control' %>
 
@@ -15,9 +62,6 @@
 
 <%= f.label :Email %>
 <%= f.email_field :email, class: 'form-control' %>
-
-<%= f.label :Company %>
-<%= f.text_field :company, class: 'form-control' %>
 
 <%= f.label :'Job Title' %>
 <%= f.text_field :job_title, class: 'form-control' %>

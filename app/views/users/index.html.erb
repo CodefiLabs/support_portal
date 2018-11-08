@@ -5,7 +5,7 @@
             <div class="user-table">
               <% if user_signed_in? %>
                 <% if current_user.role == "superadmin" %>
-                  <%= render 'devise/invitations/user_list_all' %>
+                  <%= render 'devise/invitations/user_list_agencies' %>
                   <% else %>
                     <h3>You must be signed in as superadmin to view the users list</h3>
                   <% end %>

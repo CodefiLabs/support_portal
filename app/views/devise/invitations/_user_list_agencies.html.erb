@@ -14,31 +14,32 @@ $(document).ready(function() {
     <tr>
       <th class="dt-center" scope="col">First</th>
       <th class="dt-center" scope="col">Last</th>
-      <th class="dt-center" scope="col">Id</th>
-      <th class="dt-center" scope="col">Edit</th>
-      <th class="dt-center" scope="col">Tickets Open/Closed</th>
-      <th class="dt-center" scope="col">Role</th>
+      <th class="dt-center" scope="col">Agency</th>
+      <!-- <th class="dt-center" scope="col">Id</th> -->
+      <!-- <th class="dt-center" scope="col">Tickets Open/Closed</th>-->
+      <!-- <th class="dt-center" scope="col">Role</th> -->
       <th class="dt-center" scope="col">Email</th>
-      <th class="dt-center" scope="col">Company</th>
       <th class="dt-center" scope="col">Title</th>
       <th class="dt-center" scope="col">Phone</th>
-      <th class="dt-center" scope="col">Delete</th>
+      <th class="dt-center no-sort" scope="col">Edit</th>
+      <th class="dt-center no-sort" scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-      <% @users.each do |user| %>
+
+
+      <% @myusers.each do |user| %>
       <% edit_url = "/users/#{user.id}/edit" %>
-      <tr>
       <td class="dt-center" ><%= user.first_name %></td>
       <td class="dt-center" ><%= user.last_name %></td>
-      <td class="dt-center" ><%=user.id%></th>
-      <td class="dt-center" ><%= link_to edit_user_path(user.id) do %><%= fa_icon 'edit' %><% end %></td>
-      <td class="dt-center" >0/0</td>
-      <td class="dt-center" ><%= user.role %></td>
-      <td class="dt-center" ><%= user.email %></td>
       <td class="dt-center" ><%= user.company %></td>
+        <!-- <td class="dt-center" ><%=user.id%></th> -->
+      <!--<td class="dt-center" >0/0</td>-->
+      <!-- <td class="dt-center" ><%= user.role %></td> -->
+      <td class="dt-center" ><%= user.email %></td>
       <td class="dt-center" ><%= user.job_title %></td>
       <td class="dt-center" ><%= number_to_phone(user.phone, delimiter: "-", area_code: true) %></td>
+      <td class="dt-center" ><%= link_to edit_user_path(user.id) do %><%= fa_icon 'edit' %><% end %></td>
       <td class="dt-center" ><%= link_to user_path(user),method: :delete, data: { confirm: 'Are you sure?' } do %><%= fa_icon 'trash' %><% end %></td>
       </tr>
       <% end %>

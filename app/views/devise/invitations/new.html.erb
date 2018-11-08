@@ -2,7 +2,7 @@
   <%= render 'layouts/header' %>
   </div>
 
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -22,12 +22,11 @@
               </div>
 
 
-
 <div class="container-fluid h-100 main loginwrapper">
     <div class="row align-items-center h100">
         <div class="col-sm-12 mx-auto user-table">
             <div class="user-table">
-              <button style="margin-bottom: 45px;" type="button" class="signin_button" data-toggle="modal" data-target="#exampleModal"><%= fa_icon "users", text: "Send An Invite" %></button><br/>
+              <button class="signin_button" style="color:#fff;margin-bottom:20px;" data-toggle="modal" data-target="#adduser"><%= fa_icon "plus"%> Add User</button>
               <%= render 'devise/invitations/user_list' %>
           </div>
       </div>

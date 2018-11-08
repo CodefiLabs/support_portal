@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
   <% if current_user.role == "superadmin" %>
-    <%= render 'devise/invitations/user_list_all' %>
+    <%= render 'devise/invitations/user_list_agencies' %>
 
     <% elsif current_user.role == "agencyadmin" %>
        <%= render 'devise/invitations/my_users_list' %>
