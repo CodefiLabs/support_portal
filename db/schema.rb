@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2018_11_08_002307) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,11 +92,11 @@ ActiveRecord::Schema.define(version: 2018_11_08_002307) do
   end
 
   create_table "internal_notes", force: :cascade do |t|
-    t.integer "commentor_id"
-    t.integer "ticket_id"
+    t.bigint "ticket_id"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_internal_notes_on_ticket_id"
   end
 
   create_table "priorities", force: :cascade do |t|
