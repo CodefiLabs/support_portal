@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_155219) do
+ActiveRecord::Schema.define(version: 2018_11_08_002307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,10 @@ ActiveRecord::Schema.define(version: 2018_11_06_155219) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "ticket_id"
+    t.bigint "user_id"
+    t.index ["ticket_id"], name: "index_discussions_on_ticket_id"
+    t.index ["user_id"], name: "index_discussions_on_user_id"
   end
 
   create_table "internal_notes", force: :cascade do |t|
@@ -101,6 +105,8 @@ ActiveRecord::Schema.define(version: 2018_11_06_155219) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "agency_id"
+    t.index ["agency_id"], name: "index_priorities_on_agency_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -167,4 +173,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_155219) do
 
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
+  add_foreign_key "discussions", "tickets"
+  add_foreign_key "discussions", "users"
+  add_foreign_key "priorities", "agencies"
 end
