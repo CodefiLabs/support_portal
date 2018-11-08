@@ -71,5 +71,9 @@ footer {
 .user-table{
     background-color: #fff;
     z-index: 4;
-    padding: 90px;
+    padding: 20px 0 20px 0;
+}
+
+.dt-center{
+  text-align: center;
 }

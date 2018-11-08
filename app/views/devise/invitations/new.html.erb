@@ -1,49 +1,53 @@
 <div class="container-fluid h-100vh main loginwrapper">
-  <%= render 'layouts/header' %>
+   <%= render 'layouts/header' %>
     <div class="row align-items-center h100vh">
         <div class="col-sm-4 mx-auto login">
             <div class="login_box">
 <% if user_signed_in? %>
      <% if current_user.role == "superadmin" %>
-          <h2>Invite An Agency</h2>
+        <%= render 'devise/invitations/superadminform' %>
+     <!-- End of superadmin section -->
 
-          <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
-            <%= devise_error_messages! %>
+     <% elsif current_user.role == "agencyadmin" %>
+        <%= render 'devise/invitations/agencyadminform' %>
+     <!-- End of clientadmin section -->
 
-          <% resource.class.invite_key_fields.each do |field| -%>
-          <%= f.label :'User Role' %>
-          <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-          </br>
-          <%= f.label :'First Name' %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+     <% elsif current_user.role == "clientadmin" %>
+        <%= render 'devise/invitations/clientadminform' %>
+     <!-- End of clientadmin section -->
 
-          <%= f.label :'Last Name' %>
-          <%= f.text_field :last_name, class: 'form-control' %>
-
-          <%= f.label :Email %>
-          <%= f.email_field :email, class: 'form-control' %>
-
-          <%= f.label :Company %>
-          <%= f.text_field :company, class: 'form-control' %>
-
-          <%= f.label :'Job Title' %>
-          <%= f.text_field :job_title, class: 'form-control' %>
-
-          <%= f.label :Phone %>
-          <%= f.text_field :phone, class: 'form-control' %>
-
-          <% end -%>
-
-            <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
-         <% end %>
-
-        
-     <% end %><!-- End of superadmin section -->
      <% else %>
-     <h3>Please login to invite new users.</h3>
+        <h3>Please login to invite new users.</h3>
+     <% end %>
 <% end %><!-- End of loggedin user -->
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+
+<div class="container-fluid h-100 main loginwrapper">
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+            <div class="user-table">
+              <% if user_signed_in? %>
+
+                <% if current_user.role == "superadmin" %>
+                  <%= render 'devise/invitations/user_list_all' %>
+
+                  <% elsif current_user.role == "agencyadmin" %>
+                     <%= render 'devise/invitations/my_users_list' %>
+                  <!-- End of clientadmin section -->
+
+                  <% elsif current_user.role == "clientadmin" %>
+                     <%= render 'devise/invitations/my_users_list' %>
+                  <!-- End of clientadmin section -->
+
+                  <% else %>
+                    <h3>You must be signed in to view the users list</h3>
+                  <% end %>
+              <% end %>
+          </div>
+      </div>
+    </div>
 </div>
   <%= render 'layouts/footer' %>

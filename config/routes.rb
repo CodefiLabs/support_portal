@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ resources :tickets
  resources :clients
  devise_for :users, :controllers => { :invitations => 'users/invitations' }
  resources :users
