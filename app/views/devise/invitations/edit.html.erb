@@ -1,16 +1,27 @@
-<h2><%= t 'devise.invitations.edit.header' %></h2>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token, readonly: true %>
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+          <div class="login_box">
+            <h2><%= t 'devise.invitations.edit.header' %></h2>
 
-  <% if f.object.class.require_password_on_accepting %>
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+              <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.hidden_field :invitation_token, readonly: true %>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-  <% end %>
+              <% if f.object.class.require_password_on_accepting %>
+              <p><%= f.label :password %><br />
+              <%= f.password_field :password %></p>
 
-  <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
-<% end %>
+              <p><%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation %></p>
+              <% end %>
+
+              <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
+              <% end %>
+            </div>
+          </div>
+       </div>
+   </div>
+<%= render 'layouts/footer' %>

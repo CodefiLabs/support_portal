@@ -1,11 +1,13 @@
 class AgenciesController < ApplicationController
 before_action :set_agency, only: [:show, :edit, :update, :destroy]
+skip_before_action :verify_authenticity_token,only:[:create]
 
-  def index
+  def indexp
     @agencies = Agency.all
   end
 
   def show
+    @agency = Agency.find(params[:id])
   end
 
   def edit
@@ -26,9 +28,10 @@ before_action :set_agency, only: [:show, :edit, :update, :destroy]
   def create
     @agency = Agency.new(agency_params)
     if @agency.save
-      redirect_to @agency, notice: "Agency successfully created."
-    else
-      render :new
+      @agency_id = @agency[:id]
+    end
+    respond_to do |format|
+      format.js
     end
   end
 
