@@ -1,6 +1,7 @@
+
 <%= form_for(@client) do |f| %>
 <%= @client.errors.full_messages.first if @client.errors.any? %>
-  <fieldset>
+  <nav>
     <ol>
       <li class="required">
         <%= f.label :name %>
@@ -35,5 +36,5 @@
       <%= f.submit %>
       <%= link_to "Cancel", root_path, class: 'button' %>
     </p>
-  </fieldset>
+  </nav>
 <% end %>
