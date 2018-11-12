@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_002307) do
+ActiveRecord::Schema.define(version: 2018_11_11_153234) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -163,6 +164,8 @@ ActiveRecord::Schema.define(version: 2018_11_08_002307) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.integer "role"
+    t.bigint "agency_id"
+    t.index ["agency_id"], name: "index_users_on_agency_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
@@ -176,4 +179,5 @@ ActiveRecord::Schema.define(version: 2018_11_08_002307) do
   add_foreign_key "discussions", "tickets"
   add_foreign_key "discussions", "users"
   add_foreign_key "priorities", "agencies"
+  add_foreign_key "users", "agencies"
 end
