@@ -2,7 +2,7 @@ class AgenciesController < ApplicationController
 before_action :set_agency, only: [:show, :edit, :update, :destroy]
 skip_before_action :verify_authenticity_token,only:[:create]
 
-  def indexp
+  def index
     @agencies = Agency.all
   end
 
@@ -27,10 +27,8 @@ skip_before_action :verify_authenticity_token,only:[:create]
 
   def create
     @agency = Agency.new(agency_params)
-    if @agency.save
-      @agency_id = @agency[:id]
-    end
     respond_to do |format|
+      @agency.save
       format.js
     end
   end
@@ -44,7 +42,7 @@ private
 
   def agency_params
     params.require(:agency)
-    .permit(:name, :address1, :address2, :city, :state, :zip, :phone)
+    .permit(:address1, :address2, :city, :state, :zip, :name, :phone)
   end
 
   def set_agency

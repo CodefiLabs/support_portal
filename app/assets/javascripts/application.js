@@ -12,8 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require turbolinks
 //= require datatables
 //= require rails-ujs
 //= require activestorage
 //= require_tree
+
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});

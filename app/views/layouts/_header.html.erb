@@ -1,5 +1,5 @@
-<span class="notice"><%= notice %></span>
-<span class="alert"><%= alert %></span>
+<% if notice %><p class="notice alert alert-info"><%= notice %></p><% end %>
+<% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
   <div class="row">
     <div class="col-sm-4 logo"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></div>
     <div class="col-sm-6"></div>
