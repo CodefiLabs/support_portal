@@ -1,23 +1,68 @@
-<h2>Invite An Agency</h2>
+<script>
+  function showInvitationSubmit() {
+    $('#submit-invitation-btn').show(200)
+  }
+  function createAgency(name) {
+    $.ajax({
+      url: "<%= agencies_path %>",
+      method: "post",
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      data: { 'agency[name]': name },
+
+      complete: function(data, status) {
+        if (status == 'success') {
+        }
+      }
+    })
+  }
+  $(document).ready(function(){
+    $('#default').editableSelect({ effects: 'default' })
+    $('#default').on("select.editable-select", function(e) {
+      $('#user_agency_id').val(e.target.value.match(/\((.*)\)/)[1])
+      $('#user_company').val(e.target.value.match(/\w+/))
+    })
+    $("#default").keyup(function(e){
+      $('#create_agency')[this.value.length > 0 ? 'show' : 'hide']()
+    })
+    $('#create_agency').click(function(e) {
+      if($('#default').val().length > 0) {
+        var name = $('#default').val().match(/\w+/)[0]
+        createAgency(name)
+      }
+    })
+  });
+  </script>
+
+
+
+<h2>Select or create an agency</h2>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
+  <% resource.class.invite_key_fields.each do |field| -%>
+  <small>Please choose from the list of agencies or create a new agency to proceed.</small>
+  <select id="default" required="true">
+    <%= @agencies.each_with_index  do |agency, index|  %>
+  	<option><%=" #{agency.name} (#{agency.id})" %></option>
+  <% end %>
+  </select>
 
-<% resource.class.invite_key_fields.each do |field| -%>
-<%= f.label :'User Role' %>
-<%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-</br>
+  <button data-remote="true" id="create_agency" style="display:none">Create Agency</button>
+  <hr>
+<h2>Invite an agency admin</h2>
+
+<%= hidden_field_tag 'role', 'agencyadmin'  %>
+<%= f.hidden_field :company %>
+<%= f.hidden_field :agency_id %>
+<br>
 <%= f.label :'First Name' %>
-<%= f.text_field :first_name, class: 'form-control' %>
+<%= f.text_field :first_name, class: 'form-control', required: true %>
 
 <%= f.label :'Last Name' %>
-<%= f.text_field :last_name, class: 'form-control' %>
+<%= f.text_field :last_name, class: 'form-control', required: true %>
 
 <%= f.label :Email %>
-<%= f.email_field :email, class: 'form-control' %>
-
-<%= f.label :Company %>
-<%= f.text_field :company, class: 'form-control' %>
+<%= f.email_field :email, class: 'form-control', type: 'email', required: true %>
 
 <%= f.label :'Job Title' %>
 <%= f.text_field :job_title, class: 'form-control' %>
@@ -27,5 +72,5 @@
 
 <% end -%>
 
-  <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+  <p><%= f.submit t("devise.invitations.new.submit_button"), id: "submit-invitation-btn", class: "btn btn-block btn-primary" %></p>
 <% end %>

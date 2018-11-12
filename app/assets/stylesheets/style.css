@@ -51,6 +51,7 @@ color:#fff;
   background-color: #00807B;
   z-index: 9;
   padding:10px;
+  color:#fff;
 }
 .navitem {
     color: #252525!important;
@@ -76,4 +77,11 @@ footer {
 
 .dt-center{
   text-align: center;
+}
+.no-sort::after {
+   display: none!important;
+ }
+#default{
+  width:60%;
+  margin-right: 20px;
 }

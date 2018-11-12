@@ -1,33 +1,38 @@
-<% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+          <% provide(:title, "Edit user") %>
+             <h1>Update your profile</h1>
 
-      <%= f.label :'User Role' %>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-</br>
-      <%= f.label :'First Name' %>
-      <%= f.text_field :first_name, class: 'form-control' %>
+                  <%= form_for(@user) do |f| %>
 
-      <%= f.label :'Last Name' %>
-      <%= f.text_field :last_name, class: 'form-control' %>
+                  <%= f.label :'User Role' %>
+                  <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+                   </br>
+                  <%= f.label :'First Name' %>
+                  <%= f.text_field :first_name, class: 'form-control' %>
 
-      <%= f.label :Email %>
-      <%= f.email_field :email, class: 'form-control' %>
+                  <%= f.label :'Last Name' %>
+                  <%= f.text_field :last_name, class: 'form-control' %>
 
-      <%= f.label :Company %>
-      <%= f.text_field :company, class: 'form-control' %>
+                  <%= f.label :Email %>
+                  <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :'Job Title' %>
-      <%= f.text_field :job_title, class: 'form-control' %>
+                  <%= f.label :Company %>
+                  <%= f.text_field :company, class: 'form-control' %>
 
-      <%= f.label :Phone %>
-      <%= f.text_field :phone, class: 'form-control' %>
+                  <%= f.label :'Job Title' %>
+                  <%= f.text_field :job_title, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
+                  <%= f.label :Phone %>
+                  <%= f.text_field :phone, class: 'form-control' %>
 
-  </div>
+                  <%= f.submit "Save changes", class: "btn btn-primary" %>
+                  <% end %>
+
+          </div>
+     </div>
 </div>
+<%= render 'layouts/footer' %>
