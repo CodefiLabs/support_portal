@@ -11,8 +11,6 @@
 
       complete: function(data, status) {
         if (status == 'success') {
-          $('#user_agency_id').val(e.target.value.match(/\((.*)\)/)[1])
-          $('#user_company').val(e.target.value.match(/\w+/))
         }
       }
     })
