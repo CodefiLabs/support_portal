@@ -17,5 +17,7 @@ class Agency < ApplicationRecord
 #  }
 
   has_many :clients, :through => :agencies_clients
-  #has_many :priorities, dependent: :destroy
+  has_many :priorities
+  has_many :users
+
 end

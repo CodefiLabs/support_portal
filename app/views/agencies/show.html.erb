@@ -1,3 +1,5 @@
+<%= render 'layouts/header' %>
+
 <h1><%= @agency.name %></h1><hr>
 <ul>
 <li><strong>Contact:</strong> <%= @agency.phone %></li>
@@ -10,3 +12,5 @@
                     class: 'button',
                     method: :delete, data: { confirm: 'Are you sure?' } %>|
       <a href="../agencies">View All</a>
+
+      <%= render 'layouts/footer' %>

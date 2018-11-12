@@ -1,6 +1,10 @@
+<%= render 'layouts/header' %>
+
 <h1>Agencies</h1><%= link_to 'Add New Agency', new_agency_path(@agency) %><hr>
 <ol>
 <% @agencies.each do |agency| %>
 <li><a href="../agencies/<%= agency.id %>"><%= agency.name %></li>
   <% end %>
   <ol>
+
+<%= render 'layouts/footer' %>
