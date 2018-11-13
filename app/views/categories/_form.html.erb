@@ -1,1 +1,9 @@
-#form for categories
+
+  <%= form_for(category, class: "form form-vertical") do |f| %>
+    <%= category.errors.full_messages.first if category.errors.any? %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <%= f.submit %>
+  <% end %>

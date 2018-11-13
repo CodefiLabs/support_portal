@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2018_11_11_153234) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -90,11 +89,11 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
   end
 
   create_table "internal_notes", force: :cascade do |t|
-    t.integer "commentor_id"
-    t.integer "ticket_id"
+    t.bigint "ticket_id"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_internal_notes_on_ticket_id"
   end
 
   create_table "priorties", force: :cascade do |t|
