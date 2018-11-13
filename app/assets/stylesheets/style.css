@@ -23,6 +23,7 @@
   left: 0;
   background-image: linear-gradient(to bottom right,#cacaca,#fff);
   opacity: .6;
+  z-index: -1;
 }
 p.notice{
   margin-bottom: 0;
@@ -63,7 +64,6 @@ footer {
     padding: 25px 0 20px 0;
     font-size: 12px;
     width: 100%;
-    position:fixed;
     bottom:0;
     left:0;
 }
@@ -120,4 +120,24 @@ footer {
 
 .dropdown-content a:hover {
     background-color: #ddd;
+}
+.logo > a:hover{
+    background-color: #0000;
+}
+.col.home-left {
+    background: #00827d;
+    min-height: 300px;
+    padding: 0;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.col.home-right {
+    background: #bedb00;
+    min-height: 300px;
+    padding: 0;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.homebutton a{
+  color:#fff;
 }
