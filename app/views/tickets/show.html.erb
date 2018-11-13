@@ -1,52 +1,3 @@
-<p>
-  <strong>Id:</strong>
-  <%= @ticket.id %>
-</p>
-
-<p>
-  <strong>Integer:</strong>
-  <%= @ticket.id %>
-</p>
-
-<p>
-  <strong>Created at:</strong>
-  <%= @ticket.created_at %>
-</p>
-
-<p>
-  <strong>Update at:</strong>
-  <%= @ticket.update_at %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @ticket.client_id %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @ticket.reference %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @ticket.project_id %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @ticket.reference %>
-</p>
-
-<p>
-  <strong>Created by:</strong>
-  <%= @ticket.created_by %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @ticket.reference %>
-</p>
 
 <p>
   <strong>Internal status:</strong>
@@ -56,11 +7,6 @@
 <p>
   <strong>External status:</strong>
   <%= @ticket.external_status %>
-</p>
-
-<p>
-  <strong>Uploads:</strong>
-  <%= @ticket.uploads %>
 </p>
 
 <p>
@@ -93,15 +39,12 @@
   <%= @ticket.adjusted_time %>
 </p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @ticket.priority_id %>
-</p>
 
 <p>
   <strong>Is deleted:</strong>
   <%= @ticket.is_deleted %>
 </p>
+>>>>>>> master
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>

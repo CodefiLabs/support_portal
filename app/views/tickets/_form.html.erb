@@ -11,109 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :integer %>
-    <%= form.text_field :integer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_at %>
-    <%= form.datetime_select :update_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reference %>
-    <%= form.text_field :reference %>
-  </div>
-
-  <div class="field">
-    <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reference %>
-    <%= form.text_field :reference %>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_by %>
-    <%= form.text_field :created_by %>
-  </div>
-
-  <div class="field">
-    <%= form.label :reference %>
-    <%= form.text_field :reference %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :internal_status %>
-    <%= form.text_field :internal_status %>
+    <%= form.text_field :internal_status, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :external_status %>
-    <%= form.text_field :external_status %>
+    <%= form.text_field :external_status, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :uploads %>
-    <%= form.text_field :uploads %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :start_time %>
-    <%= form.text_field :start_time %>
+    <%= form.datetime_select :start_time, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :datetime %>
-    <%= form.text_field :datetime %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
+    <%= form.datetime_select :end_time, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :total_time %>
-    <%= form.text_field :total_time %>
+    <%= form.time_field :total_time, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :adjusted_time %>
-    <%= form.text_field :adjusted_time %>
+    <%= form.time_field :adjusted_time, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :priority_id %>
-    <%= form.text_field :priority_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_deleted %>
-    <%= form.check_box :is_deleted %>
+  <div class="form-group">
+    <%= form.label :priority %>
+    <%= form.select :priority, Ticket::PRIORITIES, class: "form-control" %>
   </div>
 
   <div class="actions">
