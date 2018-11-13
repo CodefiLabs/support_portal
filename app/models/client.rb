@@ -16,8 +16,9 @@ class Client < ApplicationRecord
       message: "must be a valid phone number"
     }
 
-has_many :agencies, :through => :agencies_clients
-has_many :projects
-has_many :categories
-has_many :tickets
-has_many :users
+  has_many :agencies, :through => :agencies_clients
+  has_many :projects
+  has_many :categories
+  has_many :tickets
+  has_many :users
+end

@@ -33,11 +33,10 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    def destroy
       @client.destroy
       redirect_to root_url, alert: "Client successfully deleted."
-    end
   end
+
 
 private
 

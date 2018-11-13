@@ -1,1 +1,16 @@
-#form for categories
+<%= form_for(@category) do |f| %>
+<%= @category.errors.full_messages.first if @category.errors.any? %>
+  <fieldset>
+    <ul>
+      <li class="required">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true %>
+      </li>
+
+    </ul>
+    <p>
+      <%= f.submit %>
+      <%= link_to "Cancel", root_path, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>

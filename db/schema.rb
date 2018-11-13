@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2018_11_11_153234) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -62,6 +61,8 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_categories_on_client_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -109,6 +110,8 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -170,5 +173,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
 
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
+  add_foreign_key "categories", "clients"
+  add_foreign_key "projects", "clients"
   add_foreign_key "users", "agencies"
 end
