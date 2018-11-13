@@ -1,9 +1,9 @@
   <div class="row">
-    <div class="col-sm-4 logo"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></div>
+    <div class="col-sm-4 logo"><a href="/"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></a></div>
     <div class="col-sm-6"></div>
     <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>  <% if user_signed_in? %>
     <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>  <span class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= fa_icon "chevron-down" %><div class="dropdown-content">
-         <a href="#">My Profile</a>
+         <a href="/users/edit">My Profile</a>
       <% if current_user.role == "agencyadmin" %>
          <a href="#">Company Profile</a>
       <% elsif current_user.role == "clientadmin" %>
@@ -25,8 +25,24 @@
 
         <% end %>
     </div></span>
+
     <% else %>
     <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
     <% end %>
+
   </div>
+</div>
+<div class="container">
+<div class="row">
+<% url = request.original_url %>
+<% if url == "http://localhost:3000/" %>
+    <center class="homecontent" style="margin-bottom: 145px;margin-top: 145px;">
+      <h2>Codefi Support</h2>
+      <p>Codefi provides startup entrepreneurs and emerging innovative companies with tech-powered, flexible enterprise space, while serving the area with innovative technology education programs and an inspiring community. Just three years after its inception, Codefi has supported 40 startups, which have created over 130 jobs, and attracted over $14 million in equity investments.</p>
+      <span class="homebutton">
+      <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
+      </span>
+    </center>
+<% end %>
+</div>
 </div>

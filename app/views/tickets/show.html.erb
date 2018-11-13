@@ -1,4 +1,50 @@
 
+<p>
+  <strong>Internal status:</strong>
+  <%= @ticket.internal_status %>
+</p>
+
+<p>
+  <strong>External status:</strong>
+  <%= @ticket.external_status %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ticket.title %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @ticket.start_time %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @ticket.datetime %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @ticket.end_time %>
+</p>
+
+<p>
+  <strong>Total time:</strong>
+  <%= @ticket.total_time %>
+</p>
+
+<p>
+  <strong>Adjusted time:</strong>
+  <%= @ticket.adjusted_time %>
+</p>
+
+
+<p>
+  <strong>Is deleted:</strong>
+  <%= @ticket.is_deleted %>
+</p>
+>>>>>>> master
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>
