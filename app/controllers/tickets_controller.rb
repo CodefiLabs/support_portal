@@ -24,6 +24,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
+    byebug
     @ticket = Ticket.new(ticket_params)
 
     respond_to do |format|

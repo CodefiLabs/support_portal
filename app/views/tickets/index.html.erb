@@ -1,42 +1,62 @@
 <div class="container-fluid h-100 main loginwrapper">
   <%= render 'layouts/header' %>
     <div class="row align-items-center h100">
+
         <div class="col-sm-12 mx-auto user-table">
               <h1>Tickets</h1>
+              <button class="signin_button" style="color:#fff;margin-bottom:20px;" data-toggle="modal" data-target="#addticket"><%= fa_icon "plus"%> Add Ticket</button>
 
               <table style="width:100%;" class="responsive nowrap table table-hover" id="dttb-tickets" data-sort="true" data-source="<%= url_for(format: :json)%>">
                 <thead>
                   <tr>
-                    <th data-data="id">Id</th>
-                    <th data-data="integer">Integer</th>
-                    <th data-data="created_at">Created at</th>
-                    <th data-data="update_at">Update at</th>
+
                     <th data-data="client_id">Client</th>
-                    <th data-data="reference">Reference</th>
-                    <th data-data="project_id">Project</th>
-                    <th data-data="reference">Reference</th>
-                    <th data-data="created_by">Created by</th>
-                    <th data-data="reference">Reference</th>
                     <th data-data="internal_status">Internal status</th>
                     <th data-data="external_status">External status</th>
-                    <th data-data="uploads">Uploads</th>
                     <th data-data="title">Title</th>
                     <th data-data="start_time">Start time</th>
-                    <th data-data="datetime">Datetime</th>
                     <th data-data="end_time">End time</th>
                     <th data-data="total_time">Total time</th>
                     <th data-data="adjusted_time">Adjusted time</th>
                     <th data-data="priority_id">Priority</th>
-                    <th data-data="is_deleted">Is deleted</th>
                     <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
                   </tr>
                 </thead>
-
+                <tbody>
+                  <% @tickets.each do |ticket| %>
+                    <tr>
+                      <td><%= ticket.client_id %></td>
+                      <td><%= ticket.internal_status %></td>
+                      <td><%= ticket.external_status %></td>
+                      <td><%= ticket.start_time %></td>
+                      <td><%= ticket.end_time %></td>
+                      <td><%= ticket.total_time %></td>
+                      <td><%= ticket.adjusted_time %></td>
+                      <td></td>
+                    </tr>
+                  <% end %>
+                </tbody>
            </table>
 
         <br>
-
-      <%= link_to 'New Ticket', new_ticket_path %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="addticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render partial: 'tickets/new', locals: { ticket: Ticket.new } %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
