@@ -3,7 +3,7 @@
     <div class="col-sm-6"></div>
     <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>  <% if user_signed_in? %>
     <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>  <span class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= fa_icon "chevron-down" %><div class="dropdown-content">
-         <a href="#">My Profile</a>
+         <a href="/users/edit">My Profile</a>
       <% if current_user.role == "agencyadmin" %>
          <a href="#">Company Profile</a>
       <% elsif current_user.role == "clientadmin" %>
