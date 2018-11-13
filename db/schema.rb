@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_183718) do
+ActiveRecord::Schema.define(version: 2018_11_13_194345) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -64,7 +66,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_183718) do
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string "name"
+    t.citext "name"
     t.string "address1"
     t.string "address2"
     t.string "city"
@@ -75,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_183718) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["agency_id"], name: "index_clients_on_agency_id"
+    t.index ["name"], name: "index_clients_on_name", unique: true
   end
 
   create_table "customers", force: :cascade do |t|

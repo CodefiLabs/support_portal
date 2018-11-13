@@ -1,5 +1,8 @@
 class CreateTickets < ActiveRecord::Migration[5.2]
   def change
+    if table_exists? :tickets 
+      drop_table :tickets 
+    end
     create_table :tickets do |t|
       t.references :client, foreign_key: true
       t.integer :assigned_to
