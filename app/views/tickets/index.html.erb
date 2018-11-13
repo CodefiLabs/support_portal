@@ -1,4 +1,11 @@
-<% console %>
+<%= render partial: 'layouts/datatables' %>
+<script>
+$(document).ready(function() {
+    var table = $('#ticketsList').DataTable( {
+        responsive: true
+    } );
+} );
+</script>
 <div class="container-fluid h-100 main loginwrapper">
   <%= render 'layouts/header' %>
     <div class="row align-items-center h100">
@@ -7,7 +14,7 @@
               <h1>Tickets</h1>
               <button class="signin_button" style="color:#fff;margin-bottom:20px;" data-toggle="modal" data-target="#addticket"><%= fa_icon "plus"%> Add Ticket</button>
 
-              <table style="width:100%;" class="responsive nowrap table table-hover" id="dttb-tickets" data-sort="true" data-source="<%= url_for(format: :json)%>">
+              <table style="width:100%;" class="responsive nowrap table table-hover" id="ticketsList" data-sort="true" data-source="<%= url_for(format: :json)%>">
                 <thead>
                   <tr>
 
@@ -19,8 +26,8 @@
                     <th data-data="end_time">End time</th>
                     <th data-data="total_time">Total time</th>
                     <th data-data="adjusted_time">Adjusted time</th>
-                    <th data-data="priority_id">Priority</th>
-                    <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,11 +36,13 @@
                       <td><%= ticket.client_id %></td>
                       <td><%= ticket.internal_status %></td>
                       <td><%= ticket.external_status %></td>
+                      <td><%= ticket.title %></td>
                       <td><%= ticket.start_time %></td>
                       <td><%= ticket.end_time %></td>
                       <td><%= ticket.total_time %></td>
                       <td><%= ticket.adjusted_time %></td>
-                      <td></td>
+                      <td class="dt-center" ><%= link_to edit_ticket_path(ticket.id) do %><%= fa_icon 'edit' %><% end %></td>
+                      <td class="dt-center" ><%= link_to ticket_path(ticket),method: :delete, data: { confirm: 'Are you sure?' } do %><%= fa_icon 'trash' %><% end %></td>
                     </tr>
                   <% end %>
                 </tbody>
