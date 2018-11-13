@@ -1,3 +1,48 @@
+h1 {
+  font-family: sans-serif;
+  font-weight: 40;
+  font-size: 100px;
+  text-align: center;
+  color: black;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-radius: 80px;
+  border-radius: 180px;
+  width: 300px;
+}
+
+
+h3{
+  font-family: #009999;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  padding: 20px 100px;
+  border-bottom: 3px solid #00ff00;
+  border-top: 3px solid #00ff00;
+  background: #EEE;
+}
+.navigation ul {
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px;
+  font-family: arial;
+  border-bottom: 3px solid #009999;
+  border-top: 3px solid #009999;
+  background: #EEE;
+}
+
+.navigation li {
+  margin: 20px;
+  padding: 10px;
+  font-weight: 10;
+  letter-spacing: 2px;
+  list-style-type: none;
+}
+
 // Place all the styles related to the Clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

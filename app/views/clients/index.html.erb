@@ -1,6 +1,16 @@
-<h1>Clients</h1><%= link_to 'Add New Client', new_client_path(@client) %><hr>
-<ol>
+  <%= render 'layouts/header' %>
+
+<h1>Clients</h1>
+
+<body>
+    <nav class="navigation">
+      <ul>
 <% @clients.each do |client| %>
 <li><a href="../clients/<%= client.id %>"><%= client.name %></li>
   <% end %>
-  <ol>
+  </ul>
+    </nav>
+<h3><%= link_to 'Add New Client', new_client_path(@client) %>
+</h3>
+
+      <%= render 'layouts/footer' %>

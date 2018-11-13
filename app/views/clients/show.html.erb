@@ -1,12 +1,17 @@
-<h1><%= @client.name %></h1>
-<ul>
-<li><strong>Contact:</strong> <%= @client.phone %></li>
+<%= render 'layouts/header' %>
+<h3><%= @client.name %></h3>
+<body>
+    <nav class="navigation">
+      <ul><strong>Contact:</strong> <%= @client.phone %></li>
         <li><strong>Address:</strong><%= @client.address1 %><br></li>
         <% if @client.address2.empty? == false%><li><%=@client.address2%></li>
         <% end %>
         <%= @client.city %>, <%= @client.state %> <%= @client.zip %><br>
+      </ul>
+        </nav>
         <%= link_to 'Edit', edit_client_path(@client), class: 'button' %>|
         <%= link_to 'Delete', @client,
                     class: 'button',
                     method: :delete, data: { confirm: 'Are you sure?' } %>|
       <a href="../clients">View All</a>
+<%= render 'layouts/footer' %>
