@@ -21,3 +21,4 @@ has_many :projects
 has_many :categories
 has_many :tickets
 has_many :users
+end
