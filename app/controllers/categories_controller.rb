@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def edit
   end
 
-  def udate
+  def update
   end
 
   def new
