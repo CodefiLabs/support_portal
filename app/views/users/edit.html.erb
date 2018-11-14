@@ -3,14 +3,16 @@
   <%= render 'layouts/header' %>
     <div class="row align-items-center h100">
         <div class="col-sm-12 mx-auto user-table">
+          <div class="container">
           <% provide(:title, "Edit user") %>
              <h1>Update your profile</h1>
 
                   <%= form_for(@user) do |f| %>
-
+                <% if current_user.role == "superadmin" %>
                   <%= f.label :'User Role' %>
                   <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
                    </br>
+                <% end %>
                   <%= f.label :'First Name' %>
                   <%= f.text_field :first_name, class: 'form-control' %>
 
@@ -28,10 +30,10 @@
 
                   <%= f.label :Phone %>
                   <%= f.text_field :phone, class: 'form-control' %>
-
+<br>
                   <%= f.submit "Save changes", class: "btn btn-primary" %>
                   <% end %>
-
+                  </div>
           </div>
      </div>
 </div>

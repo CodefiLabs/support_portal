@@ -43,6 +43,14 @@ h3{
   list-style-type: none;
 }
 
+.fix-label-group {
+  align-items: center;
+}
+
+.fix-label-item {
+  height: calc(2.25rem + 2px);
+}
+
 // Place all the styles related to the Clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

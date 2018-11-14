@@ -1,3 +1,32 @@
 // Place all the styles related to the agencies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.headitem {
+background-color: #222;
+color: #72BE49;
+text-align: center;
+padding: 25px 0 20px 0;
+font-size: 25px;
+width: 100%;
+bottom:0;
+left:0;
+}
+
+.trailitem {
+  background-color: #222;
+  color: #999;
+  text-align: center;
+  padding: 0px 0 0px 0;
+  font-size: 12px;
+  width: 100%;
+  bottom:0;
+  left:0;
+}
+
+.fix-label-group {
+  align-items: center;
+}
+
+.fix-label-item {
+  height: calc(2.25rem + 2px);
+}

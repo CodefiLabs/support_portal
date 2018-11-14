@@ -1,39 +1,72 @@
+<style>.fix-label-group {
+  align-items: center;
+}
+
+.fix-label-item {
+  height: calc(2.25rem + 2px);
+}</style>
 <%= form_for(@agency) do |f| %>
 <%= @agency.errors.full_messages.first if @agency.errors.any? %>
-  <fieldset>
-    <ul>
-      <li class="required">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true %>
-      </li>
-      <li class="required">
-        <%= f.label :address1 %>
-        <%= f.text_field :address1 %>
-      </li>
-      <li>
-        <%= f.label :address2 %>
-        <%= f.text_field :address2 %>
-      </li>
-      <li class="required">
-        <%= f.label :city %>
-        <%= f.text_field :city %>
-      </li>
-      <li class="required">
-        <%= f.label :state %>
-        <%= f.select :state, Agency::STATES, prompt: "Select" %>
-      </li>
-      <li class="required">
-        <%= f.label :zip %>
-        <%= f.text_field :zip %>
-      </li>
-      <li>
-        <%= f.label :phone %>
-        <%= f.text_field :phone %>
-      </li>
-    </ul>
-    <p>
-      <%= f.submit %>
-      <%= link_to "Cancel", root_path, class: 'button' %>
-    </p>
-  </fieldset>
+<div class="row">
+<div class="input-group col-6">
+<div class="input-group-prepend">
+<span class="input-group-text">Name</span>
+</div>
+<input type="text" value="<%=@agency["name"] if @agency.id.nil? == false %>" class="form-control" name="agency[name]" id="agency_name">
+</div>
+<div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Address</span>
+  </div>
+  <input type="text" value="<%=@agency["address1"] if @agency.id.nil? == false %>" class="form-control" name="agency[address1]" id="agency_address1">
+  </div>
+  </div>
+  <div class ="row">
+    <hr>
+    </div>
+  <div class="row">
+  <div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Address 2</span>
+  </div>
+  <input type="text" value="<%=@agency["address2"] if @agency.id.nil? == false %>" class="form-control" name="agency[address2]" id="agency_address2">
+  </div>
+  <div class="input-group col-6">
+    <div class="input-group-prepend">
+    <span class="input-group-text">Phone</span>
+    </div>
+    <input type="text" value="<%=@agency["phone"] if @agency.id.nil? == false %>" class="form-control" name="agency[phone]" id="agency_phone">
+    </div>
+    </div>
+  <div class ="row">
+    <hr>
+    </div>
+  <div class="row">
+    <div class="input-group col-6">
+      <div class="input-group-prepend">
+      <span class="input-group-text">City</span>
+      </div>
+      <input type="text" value="<%=@agency["city"] if @agency.id.nil? == false %>" class="form-control" name="agency[city]" id="agency_city">
+      <select class="custom-select" name="agency[state]" id="agency_state">
+      <option value="<%=@agency["state"] if @agency.id.nil? == false %>" selected disabled hidden>State</option>
+      <% Agency::STATES.each do |x| %>
+      <option><%=x%></option>
+      <% end %>
+        </select>
+    </div>
+<div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Zip</span>
+  </div>
+  <input type="text" value="<%=@agency["zip"] if @agency.id.nil? == false %>" class="form-control" name="agency[zip]" id="agency_zip">
+</div>
+</div>
+<div class="row">
+  <hr>
+  </div>
+<div class="row">
+<%= f.button :Submit, type: :submit, class: 'btn btn-default col-12' %>
+</div>
+<div class="trailitem"><%= link_to "Cancel", :back%></div>
+      </div>
 <% end %>

@@ -18,29 +18,34 @@ $(document).ready(function() {
                 <thead>
                   <tr>
 
-                    <th data-data="client_id">Client</th>
-                    <th data-data="internal_status">Internal status</th>
-                    <th data-data="external_status">External status</th>
-                    <th data-data="title">Title</th>
-                    <th data-data="start_time">Start time</th>
-                    <th data-data="end_time">End time</th>
-                    <th data-data="total_time">Total time</th>
-                    <th data-data="adjusted_time">Adjusted time</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <!-- <th data-data="client_id">Client</th> -->
+                      <!--<th data-data="internal_status">Internal status</th>-->
+                      <!--<th data-data="external_status">External status</th>-->
+                      <th class="dt-center" data-data="priority">Priority</th>
+                      <th class="dt-center" data-data="title">Title</th>
+                      <th class="dt-center" data-data="start_time">Requester</th>
+                      <th class="dt-center" data-data="end_time">Date Requested</th>
+                      <!-- <th data-data="total_time">Total time</th>-->
+                      <!-- <th data-data="adjusted_time">Adjusted time</th>-->
+                    <th class="dt-center">View/Edit</th>
+                    <th class="dt-center">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% @tickets.each do |ticket| %>
                     <tr>
-                      <td><%= ticket.client_id %></td>
-                      <td><%= ticket.internal_status %></td>
-                      <td><%= ticket.external_status %></td>
-                      <td><%= ticket.title %></td>
-                      <td><%= ticket.start_time %></td>
-                      <td><%= ticket.end_time %></td>
-                      <td><%= ticket.total_time %></td>
-                      <td><%= ticket.adjusted_time %></td>
+                      <% date = ticket.date_requested  %>
+                      <% date = date.try(:to_formatted_s, :long) %>
+
+                      <!-- <td><%= ticket.client_id %></td>-->
+                      <!-- <td><%= ticket.internal_status %></td>-->
+                      <!-- <td><%= ticket.external_status %></td>-->
+                      <td class="dt-center" ><%= ticket.priority %></td>
+                      <td class="dt-center" ><%= ticket.title %></td>
+                      <td class="dt-center" ><%= ticket.requester %></td>
+                      <td class="dt-center" ><%= date %></td>
+                      <!-- <td><%= ticket.total_time %></td>-->
+                      <!-- <td><%= ticket.adjusted_time %></td>-->
                       <td class="dt-center" ><%= link_to edit_ticket_path(ticket.id) do %><%= fa_icon 'edit' %><% end %></td>
                       <td class="dt-center" ><%= link_to ticket_path(ticket),method: :delete, data: { confirm: 'Are you sure?' } do %><%= fa_icon 'trash' %><% end %></td>
                     </tr>
@@ -53,7 +58,7 @@ $(document).ready(function() {
   </div>
 </div>
 <div class="modal fade" id="addticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
