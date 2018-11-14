@@ -1,40 +1,48 @@
-
 <%= form_for(@client) do |f| %>
 <%= @client.errors.full_messages.first if @client.errors.any? %>
-  <nav>
-    <ol>
-      <li class="required">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true %>
-      </li>
-      <li class="required">
-        <%= f.label :address1 %>
-        <%= f.text_field :address1 %>
-      </li>
-      <li>
-        <%= f.label :address2 %>
-        <%= f.text_field :address2 %>
-      </li>
-      <li class="required">
-        <%= f.label :city %>
-        <%= f.text_field :city %>
-      </li>
-      <li class="required">
-        <%= f.label :state %>
-        <%= f.select :state, Client::STATES, prompt: "Select" %>
-      </li>
-      <li class="required">
-        <%= f.label :zip %>
-        <%= f.text_field :zip %>
-      </li>
-      <li>
-        <%= f.label :phone %>
-        <%= f.text_field :phone %>
-      </li>
-    </ol>
-    <p>
-      <%= f.submit %>
-      <%= link_to "Cancel", root_path, class: 'button' %>
-    </p>
-  </nav>
+<div class="row">
+<div class="input-group col-6">
+<div class="input-group-prepend">
+<span class="input-group-text">Name</span>
+</div>
+<input type="text" value="<%=@client["name"] if @client.id.nil? == false %>" class="form-control" name="client[name]" id="client_name">
+</div>
+<div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Address</span>
+  </div>
+  <input type="text" value="<%=@client["address"] if @client.id.nil? == false %>" class="form-control" name="client[address1]" id="client_address1">
+  </div>
+  </div>
+  <div class ="row">
+    <hr>
+    </div>
+  <div class="row">
+    <div class="input-group col-6">
+      <div class="input-group-prepend">
+      <span class="input-group-text">City</span>
+      </div>
+      <input type="text" value="<%=@client["city"] if @client.id.nil? == false %>" class="form-control" name="client[city]" id="client_city">
+      <select class="custom-select" name="client[state]" id="client_state">
+      <option value="<%=@client["state"] if @client.id.nil? == false %>" selected disabled hidden>State</option>
+      <% Client::STATES.each do |x| %>
+      <option><%=x%></option>
+      <% end %>
+        </select>
+    </div>
+<div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Zip</span>
+  </div>
+  <input type="text" value="<%=@client["zip"] if @client.id.nil? == false %>" class="form-control" name="client[zip]" id="client_zip">
+</div>
+</div>
+<div class="row">
+  <hr>
+  </div>
+<div class="row">
+<%= f.button :Submit, type: :submit, class: 'btn btn-default col-12' %>
+</div>
+<div class="trailitem"><%= link_to "Cancel", root_path, class: 'button' %></div>
+      </div>
 <% end %>
