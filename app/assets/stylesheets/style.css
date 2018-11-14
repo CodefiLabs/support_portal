@@ -109,7 +109,7 @@ footer {
 }
 .dropdown:hover .dropdown-content {
     display: block;
-    margin-left: 70px;
+
 }
 .dropdown a{
   color:#2e2e2e;
@@ -145,4 +145,26 @@ footer {
 }
 .homebutton a{
   color:#fff;
+}
+.user-table{
+  min-height: 50vh;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .col-sm-4.logo {
+      text-align: center;
+  }
+  .col-sm-8.loginlink {
+      text-align: center;
+  }
+  .col-sm-8.loginlink .pull-right {
+      float: none;
+      margin-bottom: 10px;
+  }
+
+
 }

@@ -4,15 +4,20 @@
       <% else %>
     <div class="col-sm-4 logo"><a href="/"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></a></div>
     <% end %>
-    <div class="col-sm-6"></div>
-    <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>  <% if user_signed_in? %>
-    <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>  <span class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= fa_icon "chevron-down" %><div class="dropdown-content">
+
+
+      <% if user_signed_in? %>
+        <div class="col-sm-8 loginlink">
+          <div class="pull-right">
+            <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
+          <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>
+      <div class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= current_user.first_name %> <%= current_user.last_name %> <%= fa_icon "chevron-down" %><div class="dropdown-content">
          <a href="/users/edit">My Profile</a>
       <% if current_user.role == "agencyadmin" %>
          <a href="#">Company Profile</a>
       <% elsif current_user.role == "clientadmin" %>
          <a href="#">Company Profile</a>
-        <% end %>
+      <% end %>
 
       <% if current_user.role == "superadmin" %>
           <a href="/users/invitation/new">Manage Agencies</a>
@@ -28,9 +33,10 @@
         <% else %>
 
         <% end %>
-    </div></span>
+    </div></div></div>
 
     <% else %>
+    <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
     <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
     <% end %>
 
