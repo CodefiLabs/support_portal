@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_153234) do
+ActiveRecord::Schema.define(version: 2018_11_13_194345) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "hstore"
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string "name"
+    t.citext "name"
     t.string "address1"
     t.string "address2"
     t.string "city"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["agency_id"], name: "index_clients_on_agency_id"
+    t.index ["name"], name: "index_clients_on_name", unique: true
   end
 
   create_table "customers", force: :cascade do |t|
@@ -112,28 +113,18 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "update_at"
-    t.bigint "client_id_id"
-    t.bigint "project_id_id"
-    t.bigint "created_by_id"
-    t.bigint "assigned_to_id"
+    t.bigint "client_id"
+    t.integer "assigned_to"
     t.string "internal_status"
     t.string "external_status"
-    t.string "uploads"
     t.string "title"
     t.datetime "start_time"
     t.datetime "end_time"
     t.float "total_time"
     t.float "adjusted_time"
-    t.bigint "priority_id_id"
+    t.string "priority"
     t.boolean "is_deleted"
-    t.datetime "updated_at", null: false
-    t.index ["assigned_to_id"], name: "index_tickets_on_assigned_to_id"
-    t.index ["client_id_id"], name: "index_tickets_on_client_id_id"
-    t.index ["created_by_id"], name: "index_tickets_on_created_by_id"
-    t.index ["priority_id_id"], name: "index_tickets_on_priority_id_id"
-    t.index ["project_id_id"], name: "index_tickets_on_project_id_id"
+    t.index ["client_id"], name: "index_tickets_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -170,5 +161,6 @@ ActiveRecord::Schema.define(version: 2018_11_11_153234) do
 
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
+  add_foreign_key "tickets", "clients"
   add_foreign_key "users", "agencies"
 end
