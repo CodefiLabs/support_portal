@@ -1,3 +1,10 @@
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+        <div class="col-sm-12 mx-auto user-table">
+          <div class="container">
+          <% provide(:title, "Edit user") %>
+             <h1>Update your profile</h1>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -41,3 +48,8 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
+</div>
+</div>
+</div>
+<%= render 'layouts/footer' %>
