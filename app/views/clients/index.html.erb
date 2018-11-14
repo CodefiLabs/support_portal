@@ -1,16 +1,39 @@
-  <%= render 'layouts/header' %>
+<%= render 'layouts/header' %>
+<%= render 'layouts/datatables' %>
+<script>
+$(document).ready(function() {
+    var table = $('#clientslist').DataTable( {
+        responsive: true
+    } );
 
+} );
+</script>
 <h1>Clients</h1>
-
-<body>
-    <nav class="navigation">
-      <ul>
+<%= link_to 'Add New Client', new_client_path(@client) %><hr>
+<table id="clientslist" class="table table-striped table-bordered responsive no-wrap dt-responsive" style="width:100%">
+  <thead>
+    <tr>
+      <th class="dt-center" scope="col">ID</th>
+      <th class="dt-center" scope="col">Client</th>
+      <th class="dt-center" scope="col">Phone</th>
+      <th class="dt-center" scope="col">Address</th>
+      <th class="dt-center" scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
 <% @clients.each do |client| %>
-<li><a href="../clients/<%= client.id %>"><%= client.name %></li>
-  <% end %>
-  </ul>
-    </nav>
-<h3><%= link_to 'Add New Client', new_client_path(@client) %>
-</h3>
+<tr>
+<td class="dt-center" ><%= client.id %></td>
+<td class="dt-center" ><a href="../agencies/<%= client.id %>"><%= client.name %></td>
+<td class="dt-center" ><%= client.phone %></td>
+<td class="dt-center" ><%= client.address1 %></td>
+<td class="dt-center" ><%= link_to 'Edit', edit_client_path(client), class: 'button' %>|
+<%= link_to 'Delete', client,
+            class: 'button',
+            method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+            </tbody>
+            </table>
 
-      <%= render 'layouts/footer' %>
+<%= render 'layouts/footer' %>
