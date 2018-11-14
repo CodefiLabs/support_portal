@@ -1,5 +1,5 @@
-<%= render 'layouts/datatables' %>
 <%= render 'layouts/header' %>
+<%= render 'layouts/datatables' %>
 <script>
 $(document).ready(function() {
     var table = $('#clientslist').DataTable( {
@@ -32,8 +32,8 @@ $(document).ready(function() {
             class: 'button',
             method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
+            <% end %>
             </tbody>
             </table>
-  <% end %>
 
 <%= render 'layouts/footer' %>
