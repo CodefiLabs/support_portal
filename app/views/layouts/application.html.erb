@@ -30,7 +30,12 @@
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
   </head>
-
+<script>
+  javascript:   $('#page_content').editable({
+    imageUploadURL: '/admin/media/documents/',
+    imageUploadMethod: 'POST'
+}
+</script>
   <body>
     <%= custom_bootstrap_flash %>
     <%= yield %>

@@ -36,8 +36,11 @@
     </div></div></div>
 
     <% else %>
-    <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
+
+    <div class="col-sm-8 loginlink">
+      <div class="pull-right"> <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
     <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
+    </div>
     <% end %>
 
   </div>
