@@ -18,6 +18,23 @@
     <hr>
     </div>
   <div class="row">
+  <div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Address 2</span>
+  </div>
+  <input type="text" value="<%=@client["address2"] if @client.id.nil? == false %>" class="form-control" name="client[address2]" id="client_address2">
+  </div>
+  <div class="input-group col-6">
+    <div class="input-group-prepend">
+    <span class="input-group-text">Phone</span>
+    </div>
+    <input type="text" value="<%=@client["phone"] if @client.id.nil? == false %>" class="form-control" name="client[phone]" id="client_phone">
+    </div>
+    </div>
+  <div class ="row">
+    <hr>
+    </div>
+  <div class="row">
     <div class="input-group col-6">
       <div class="input-group-prepend">
       <span class="input-group-text">City</span>
@@ -43,6 +60,6 @@
 <div class="row">
 <%= f.button :Submit, type: :submit, class: 'btn btn-default col-12' %>
 </div>
-<div class="trailitem"><%= link_to "Cancel", root_path, class: 'button' %></div>
+<div class="trailitem"><%= link_to "Cancel", :back%></div>
       </div>
 <% end %>

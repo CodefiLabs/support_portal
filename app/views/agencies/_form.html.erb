@@ -18,9 +18,26 @@
   <div class="input-group-prepend">
   <span class="input-group-text">Address</span>
   </div>
-  <input type="text" value="<%=@agency["address"] if @agency.id.nil? == false %>" class="form-control" name="agency[address1]" id="agency_address1">
+  <input type="text" value="<%=@agency["address1"] if @agency.id.nil? == false %>" class="form-control" name="agency[address1]" id="agency_address1">
   </div>
   </div>
+  <div class ="row">
+    <hr>
+    </div>
+  <div class="row">
+  <div class="input-group col-6">
+  <div class="input-group-prepend">
+  <span class="input-group-text">Address 2</span>
+  </div>
+  <input type="text" value="<%=@agency["address2"] if @agency.id.nil? == false %>" class="form-control" name="agency[address2]" id="agency_address2">
+  </div>
+  <div class="input-group col-6">
+    <div class="input-group-prepend">
+    <span class="input-group-text">Phone</span>
+    </div>
+    <input type="text" value="<%=@agency["phone"] if @agency.id.nil? == false %>" class="form-control" name="agency[phone]" id="agency_phone">
+    </div>
+    </div>
   <div class ="row">
     <hr>
     </div>
@@ -50,6 +67,6 @@
 <div class="row">
 <%= f.button :Submit, type: :submit, class: 'btn btn-default col-12' %>
 </div>
-<div class="trailitem"><%= link_to "Cancel", root_path, class: 'button' %></div>
+<div class="trailitem"><%= link_to "Cancel", :back%></div>
       </div>
 <% end %>
