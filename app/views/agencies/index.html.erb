@@ -26,7 +26,7 @@ $(document).ready(function() {
 <td class="dt-center" ><%= agency.id %></td>
 <td class="dt-center" ><a href="../agencies/<%= agency.id %>"><%= agency.name %></td>
 <td class="dt-center" ><%= agency.phone %></td>
-<td class="dt-center" ><%= agency.address1 %><%=" " + agency.address2%><%=", " + agency.city %><%=", " + agency.state%><%="  " + agency.zip%></td>
+<td class="dt-center" ><%= agency.address1 %></td>
 <td class="dt-center" ><%= link_to 'Edit', edit_agency_path(agency), class: 'button' %>|
 <%= link_to 'Delete', agency,
             class: 'button',

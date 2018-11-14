@@ -26,7 +26,7 @@ $(document).ready(function() {
 <td class="dt-center" ><%= client.id %></td>
 <td class="dt-center" ><a href="../agencies/<%= client.id %>"><%= client.name %></td>
 <td class="dt-center" ><%= client.phone %></td>
-<td class="dt-center" ><%= client.address1 %><%=" " + client.address2%><%=", " + client.city %><%=", " + client.state%><%="  " + client.zip%></td>
+<td class="dt-center" ><%= client.address1 %></td>
 <td class="dt-center" ><%= link_to 'Edit', edit_client_path(client), class: 'button' %>|
 <%= link_to 'Delete', client,
             class: 'button',
