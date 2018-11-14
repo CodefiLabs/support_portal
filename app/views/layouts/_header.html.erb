@@ -1,5 +1,9 @@
   <div class="row">
+      <% if user_signed_in? %>
+<div class="col-sm-4 logo"><a href="/tickets"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></a></div>
+      <% else %>
     <div class="col-sm-4 logo"><a href="/"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></a></div>
+    <% end %>
     <div class="col-sm-6"></div>
     <div class="col-sm-2 loginlink float-left pull-left">  <%= link_to('Pricing', '/pricing', class: 'navitem')  %>  <% if user_signed_in? %>
     <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button')  %>  <span class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= fa_icon "chevron-down" %><div class="dropdown-content">
