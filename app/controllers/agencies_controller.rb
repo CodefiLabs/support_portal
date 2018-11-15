@@ -30,6 +30,8 @@ skip_before_action :verify_authenticity_token,only:[:create]
     respond_to do |format|
       @agency.save
       format.js
+#Need to add something here to ignore requests to create duplicate connections (some way to avoid throwing errors for end user, maybe an if-statement?)
+    params["selection"].map{|x| AgenciesClient.create(clients_id: x.to_i, agencies_id: @agency.id)}
     end
   end
 
