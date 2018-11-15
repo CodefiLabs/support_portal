@@ -1,12 +1,12 @@
 <%= render 'layouts/header' %>
-
-<h1><%= @agency.name %></h1><hr>
-<ul>
+<nav class="navigation">
+  <ul><%= @agency.name %></li>
 <li><strong>Contact:</strong> <%= @agency.phone %></li>
         <li><strong>Address:</strong><%= @agency.address1 %><br></li>
         <% if @agency.address2.present?%><li><%=@agency.address2%></li>
         <% end %>
         <%= @agency.city %>, <%= @agency.state %> <%= @agency.zip %><br>
+</nav>
         <%= link_to 'Edit', edit_agency_path(@agency), class: 'button' %>|
         <%= link_to 'Delete', @agency,
                     class: 'button',
