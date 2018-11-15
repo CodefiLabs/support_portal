@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_194509) do
+ActiveRecord::Schema.define(version: 2018_11_15_012500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_categories_on_client_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -96,11 +98,11 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
   end
 
   create_table "internal_notes", force: :cascade do |t|
-    t.integer "commentor_id"
-    t.integer "ticket_id"
+    t.bigint "ticket_id"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_internal_notes_on_ticket_id"
   end
 
   create_table "priorties", force: :cascade do |t|
@@ -132,6 +134,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
     t.text "message"
     t.string "requester"
     t.datetime "date_requested"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_tickets_on_category_id"
     t.index ["client_id"], name: "index_tickets_on_client_id"
   end
 
@@ -158,7 +162,9 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
     t.integer "invitations_count", default: 0
     t.integer "role"
     t.bigint "agency_id"
+    t.bigint "client_id"
     t.index ["agency_id"], name: "index_users_on_agency_id"
+    t.index ["client_id"], name: "index_users_on_client_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
@@ -169,6 +175,9 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
 
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
+  add_foreign_key "categories", "clients"
+  add_foreign_key "tickets", "categories"
   add_foreign_key "tickets", "clients"
   add_foreign_key "users", "agencies"
+  add_foreign_key "users", "clients"
 end
