@@ -1,28 +1,7 @@
-h1 {
-  font-family: sans-serif;
-  font-weight: 40;
-  font-size: 100px;
-  text-align: center;
-  color: black;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  margin-radius: 80px;
-  border-radius: 180px;
-  width: 300px;
-}
 
 
-h3{
-  font-family: #009999;
-  text-align: center;
-  color: black;
-  font-size: 15px;
-  padding: 20px 100px;
-  border-bottom: 3px solid #00ff00;
-  border-top: 3px solid #00ff00;
-  background: #EEE;
-}
+
+
 .navigation ul {
   font-size: 25px;
   text-align: center;
@@ -30,9 +9,9 @@ h3{
   margin-bottom: 50px;
   padding: 10px;
   font-family: arial;
-  border-bottom: 3px solid #009999;
-  border-top: 3px solid #009999;
-  background: #EEE;
+  border-bottom: 3px solid #99cc00;
+  border-top: 3px solid #99cc00;
+  background: #ffffff;
 }
 
 .navigation li {
@@ -41,14 +20,6 @@ h3{
   font-weight: 10;
   letter-spacing: 2px;
   list-style-type: none;
-}
-
-.fix-label-group {
-  align-items: center;
-}
-
-.fix-label-item {
-  height: calc(2.25rem + 2px);
 }
 
 // Place all the styles related to the Clients controller here.
