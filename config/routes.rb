@@ -15,9 +15,7 @@ Rails.application.routes.draw do
  #get 'users/:id/edit' => 'users#edit', :as => :user
  get 'priorities' => "pages#priorities"
  get 'discussions' => "pages#discussions"
- resource :admin do
     resource :media do
       post 'documents' => 'documents#upload'
-    end
 end
 end

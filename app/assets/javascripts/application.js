@@ -9,15 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require datatables
+//= require jquery_ujs
+//= require Chart.min
+//= require turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require froala_editor.min.js
-$('selector').froalaEditor();
 //= require_tree
 
 $.ajaxSetup({

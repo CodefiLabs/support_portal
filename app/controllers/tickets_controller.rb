@@ -18,6 +18,9 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
   end
 
+  def chart
+    @tickets = Ticket.all
+  end
   # GET /tickets/1/edit
   def edit
   end

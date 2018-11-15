@@ -8,7 +8,7 @@ gem "wysiwyg-rails"
 gem "font-awesome-sass"
 
 #gem 'devise_invitable'
-
+gem 'chart-js-rails'
 gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

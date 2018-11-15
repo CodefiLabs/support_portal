@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_194509) do
+ActiveRecord::Schema.define(version: 2018_11_15_021539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -77,6 +77,16 @@ ActiveRecord::Schema.define(version: 2018_11_14_194509) do
     t.datetime "updated_at", null: false
     t.index ["agency_id"], name: "index_clients_on_agency_id"
     t.index ["name"], name: "index_clients_on_name", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "ticket_id_id"
+    t.bigint "user_id_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id_id"], name: "index_comments_on_ticket_id_id"
+    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
   end
 
   create_table "customers", force: :cascade do |t|
