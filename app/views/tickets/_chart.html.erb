@@ -1,8 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <canvas id="myChart" width="400" height="300"></canvas>
 
+      <canvas id="myChart" width="400" height="300"></canvas>
+<%= @tickets.group_by_day(:date_requested).count %>
       <script>
 
   var d = new Date();
@@ -29,6 +30,7 @@
   var n5 = weekday[d.getDay()-5];
   var n6 = weekday[d.getDay()-6];
 
+var count = <%= @tickets.count %>;
 
   var today = new Date();
 var dd = today.getDate();
@@ -47,11 +49,11 @@ var dayn_2 = dd - 3
 var dayn_3 = dd - 4
 var dayn_4 = dd - 5
 var dayn_5 = dd - 6
-var dayn_6 = dd - 7
 
-var all_tickets = <%= @tickets.count %>
+var all_tickets = <%= @tickets.count %>;
 
       var ctx = document.getElementById("myChart").getContext('2d');
+
       var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
