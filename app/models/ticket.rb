@@ -5,4 +5,5 @@ class Ticket < ApplicationRecord
     ["Low", "Low"],
   ]
   has_many :internal_notes
+  belongs_to :category
 end

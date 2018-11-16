@@ -24,7 +24,7 @@ $(document).ready(function() {
 <% @clients.each do |client| %>
 <tr>
 <td class="dt-center" ><%= client.id %></td>
-<td class="dt-center" ><a href="../agencies/<%= client.id %>"><%= client.name %></td>
+<td class="dt-center" ><a href="../clients/<%= client.id %>"><%= client.name %></td>
 <td class="dt-center" ><%= client.phone %></td>
 <td class="dt-center" ><%= client.address1 %></td>
 <td class="dt-center" ><%= link_to 'Edit', edit_client_path(client), class: 'button' %>|

@@ -46,17 +46,3 @@
 
   </div>
 </div>
-<div class="container">
-<div class="row">
-<% url = request.original_url %>
-<% if url == "http://localhost:3000/" %>
-    <center class="homecontent" style="margin-bottom: 145px;margin-top: 145px;">
-      <h2>Codefi Support</h2>
-      <p>Codefi provides startup entrepreneurs and emerging innovative companies with tech-powered, flexible enterprise space, while serving the area with innovative technology education programs and an inspiring community. Just three years after its inception, Codefi has supported 40 startups, which have created over 130 jobs, and attracted over $14 million in equity investments.</p>
-      <span class="homebutton">
-      <%= link_to('Sign In', new_user_session_path, class: 'signin_button')  %>
-      </span>
-    </center>
-<% end %>
-</div>
-</div>
