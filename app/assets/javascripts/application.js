@@ -12,6 +12,8 @@
 //= require jquery
 //= require datatables
 //= require jquery_ujs
+//= require Chart.bundle
+//= require chartkick
 //= require Chart.min
 //= require turbolinks
 //= require rails-ujs

@@ -1,0 +1,27 @@
+<%= render partial: 'layouts/datatables' %>
+<script>
+$(document).ready(function() {
+    var table = $('#ticketsList').DataTable( {
+        responsive: true
+    } );
+} );
+</script>
+<div class="container-fluid h-100 main loginwrapper">
+  <%= render 'layouts/header' %>
+    <div class="row align-items-center h100">
+
+        <div class="col-sm-12 mx-auto user-table">
+                <%= render 'tickets/chart' %>
+              <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <label>Recent Tickets</label>
+                <%= render 'tickets/table' %>
+              </div>
+            </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<%= render 'layouts/footer' %>

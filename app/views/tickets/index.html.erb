@@ -15,7 +15,7 @@ $(document).ready(function() {
               <button class="signin_button" style="color:#fff;margin-bottom:20px;" data-toggle="modal" data-target="#addticket"><%= fa_icon "plus"%> Add Ticket</button>
 
 
-<%= render 'tickets/chart' %>
+
               <table style="width:100%;" class="responsive nowrap table table-hover" id="ticketsList" data-sort="true" data-source="<%= url_for(format: :json)%>">
                 <thead>
                   <tr>
