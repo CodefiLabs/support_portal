@@ -14,8 +14,6 @@ $(document).ready(function() {
               <h1>Tickets</h1>
               <button class="signin_button" style="color:#fff;margin-bottom:20px;" data-toggle="modal" data-target="#addticket"><%= fa_icon "plus"%> Add Ticket</button>
 
-
-
               <table style="width:100%;" class="responsive nowrap table table-hover" id="ticketsList" data-sort="true" data-source="<%= url_for(format: :json)%>">
                 <thead>
                   <tr>
@@ -34,15 +32,24 @@ $(document).ready(function() {
                   </tr>
                 </thead>
                 <tbody>
+
                   <% @tickets.each do |ticket| %>
                     <tr>
+
+                      <% if ticket.priority == "High" %>
+                    <% prioritypill = 'danger' %>
+                      <% elsif ticket.priority == "Medium" %>
+                    <% prioritypill = 'warning'%>
+                      <% elsif ticket.priority == "Low" %>
+                    <% prioritypill = 'info'%>
+                      <% end %>
                       <% date = ticket.date_requested  %>
                       <% date = date.try(:to_formatted_s, :long) %>
 
                       <!-- <td><%= ticket.client_id %></td>-->
                       <!-- <td><%= ticket.internal_status %></td>-->
                       <!-- <td><%= ticket.external_status %></td>-->
-                      <td class="dt-center" ><%= ticket.priority %></td>
+                      <td class="dt-center" ><span class="badge badge-pill badge-<%=prioritypill%>"><%= ticket.priority %></span></td>
                       <td class="dt-center" ><%= ticket.title %></td>
                       <td class="dt-center" ><%= ticket.requester %></td>
                       <td class="dt-center" ><%= date %></td>
