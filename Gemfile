@@ -6,9 +6,11 @@ gem 'carrierwave'
 gem 'font-awesome-rails'
 gem "wysiwyg-rails"
 gem "font-awesome-sass"
+gem 'groupdate'
+gem "chartkick"
 
 #gem 'devise_invitable'
-
+gem 'chart-js-rails'
 gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

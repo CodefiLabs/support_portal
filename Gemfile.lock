@@ -71,6 +71,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chart-js-rails (0.1.6)
+      railties (> 3.1)
+    chartkick (3.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (2.1.0)
@@ -104,6 +107,8 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.1.0)
+      activesupport (>= 4.2)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -255,12 +260,15 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
+  chart-js-rails
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   devise_invitable
   font-awesome-rails
   font-awesome-sass
+  groupdate
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-rails (~> 4.3, >= 4.3.1)

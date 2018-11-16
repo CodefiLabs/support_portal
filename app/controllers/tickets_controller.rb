@@ -18,6 +18,14 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
   end
 
+  def chart
+    @tickets = Ticket.all
+  end
+
+  def dashboard
+    @tickets = Ticket.all
+    @myusers = User.where({invited_by_id: current_user.id})
+  end
   # GET /tickets/1/edit
   def edit
   end

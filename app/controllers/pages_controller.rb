@@ -6,9 +6,8 @@ class PagesController < ApplicationController
   def pricing
 
   end
-  
 
   def priorities
-    
+
   end
 end
