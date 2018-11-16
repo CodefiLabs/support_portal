@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2018_11_15_012500) do
+
+ActiveRecord::Schema.define(version: 2018_11_15_021539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -107,11 +108,11 @@ ActiveRecord::Schema.define(version: 2018_11_15_012500) do
   end
 
   create_table "internal_notes", force: :cascade do |t|
-    t.bigint "ticket_id"
+    t.integer "commentor_id"
+    t.integer "ticket_id"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id"], name: "index_internal_notes_on_ticket_id"
   end
 
   create_table "priorties", force: :cascade do |t|
