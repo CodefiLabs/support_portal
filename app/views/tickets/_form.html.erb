@@ -31,7 +31,6 @@
     <%= form.label :external_status %>
     <%= form.text_field :external_status, class: "form-control" %>
   </div> -->
-  <% console %>
   <div class="form-group">
     <%= form.label :category %>
     <%= form.select :category_id, options_from_collection_for_select(current_user.client.categories, :id, :title)  %>
