@@ -1,5 +1,7 @@
 class Client < ApplicationRecord
 
+  has_many :categories
+
   STATES = %w( AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY)
 
 
@@ -16,9 +18,8 @@ class Client < ApplicationRecord
       message: "must be a valid phone number"
     }
 
-has_many :agencies, :through => :agencies_clients
-has_many :projects
-has_many :categories
-has_many :tickets
-has_many :users
+  has_many :agencies, :through => :agencies_clients
+  has_many :projects
+  has_many :tickets
+  has_many :users
 end

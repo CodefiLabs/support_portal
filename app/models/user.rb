@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   enum role: [:superadmin, :agencyadmin, :agencyuser, :clientadmin, :user]
   after_initialize :set_default_role, :if => :new_record?
-
+  belongs_to :client
+  belongs_to :agency
   def set_default_role
     self.role ||= :user
   end

@@ -1,0 +1,11 @@
+
+<div class="row">
+   <div class="col-md-6">
+     <label>Tickets Per Day(Last 7 Days)</label>
+     <%= column_chart Ticket.group_by_day_of_week(:date_requested, format: "%a").count %>
+   </div>
+   <div class="col-md-6">
+     <label>Tickets By Priority</label>
+     <%= pie_chart Ticket.group(:priority).count %>
+   </div>
+ </div>
