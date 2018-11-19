@@ -52,6 +52,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-datatables'
 gem 'mini_racer'
+gem 'paperclip'
 #gem 'data-confirm-modal'
 
 # Reduces boot times through caching; required in config/boot.rb
