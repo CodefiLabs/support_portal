@@ -1,4 +1,4 @@
-<%= render 'layouts/header' %>
+
 <nav class="navigation">
   <ul><%= @client.name %></li>
     <li><strong>Contact:</strong> <%= @client.phone %></li>
@@ -14,4 +14,3 @@
                     method: :delete, data: { confirm: 'Are you sure?' } %>|
       <a href="../clients">View All</a>
 </nav>
-<%= render 'layouts/footer' %>

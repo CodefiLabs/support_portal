@@ -40,7 +40,11 @@
 })
 </script>
   <body>
+    <div class="main-container">
+    <%= render 'layouts/header' %>
     <%= custom_bootstrap_flash %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

@@ -171,3 +171,7 @@ footer {
 a:hover {
     background-color: #0000;
 }
+div.main-container{
+    padding: 4px;
+    margin: 4px;
+}
