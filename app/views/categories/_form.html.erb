@@ -1,6 +1,8 @@
 
   <%= form_for(category, class: "form form-vertical") do |f| %>
     <%= category.errors.full_messages.first if category.errors.any? %>
+    <%= f.hidden_field  :user_type, value: current_user.role %>
+    <%= f.hidden_field :creator_id, value: current_user.id %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: "form-control" %>

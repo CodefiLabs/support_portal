@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include UserCategoriesService
   before_action :set_category, except: [:index, :new, :create]
   def index
     @categories = Category.all
@@ -23,6 +24,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
+      UserCategoriesService::assign_category(@category.id, @category.title, current_user.id)
       redirect_to categories_path, notice: "Category successfully created."
     else
       render:new
@@ -37,7 +39,7 @@ class CategoriesController < ApplicationController
 private
   def category_params
     params.require(:category).
-      permit(:title, :client_id)
+      permit(:title, :client_id, :creator_id, :user_type)
   end
 
   def set_category

@@ -44,7 +44,7 @@ $(document).ready(function() {
         </button>
       </div>
       <div class="modal-body">
-        <%= render partial: 'categories/new', locals: { category: Category.new } %>
+        <%= render partial: 'categories/form', locals: { category: Category.new } %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

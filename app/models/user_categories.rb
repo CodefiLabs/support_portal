@@ -1,0 +1,2 @@
+class UserCategories < ApplicationRecord
+end

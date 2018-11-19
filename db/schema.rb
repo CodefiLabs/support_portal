@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_025202) do
+ActiveRecord::Schema.define(version: 2018_11_19_212310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -64,7 +64,12 @@ ActiveRecord::Schema.define(version: 2018_11_15_025202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "client_id"
+    t.string "user_type"
+    t.bigint "creator_id"
+    t.integer "category_id"
+    t.string "category_title"
     t.index ["client_id"], name: "index_categories_on_client_id"
+    t.index ["creator_id"], name: "index_categories_on_creator_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -149,6 +154,14 @@ ActiveRecord::Schema.define(version: 2018_11_15_025202) do
     t.bigint "category_id"
     t.index ["category_id"], name: "index_tickets_on_category_id"
     t.index ["client_id"], name: "index_tickets_on_client_id"
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "categories_id"
+    t.string "category_title"
+    t.index ["categories_id"], name: "index_user_categories_on_categories_id"
+    t.index ["users_id"], name: "index_user_categories_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
