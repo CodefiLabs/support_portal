@@ -1,28 +1,33 @@
-<div class="container-fluid h-100 main loginwrapper">
-  <%= render 'layouts/header' %>
+<style>
+  .modal-backdrop{
+    z-index: unset;
+  }
+</style>
+<div class="h-100 main loginwrapper">
+
+
+
+  <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= render 'devise/invitations/new_pop_up' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-              <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"></h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= render 'devise/invitations/new_pop_up' %>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-
-<div class="container-fluid h-100 main loginwrapper">
+<div class="h-100 main loginwrapper">
     <div class="row align-items-center h100">
         <div class="col-sm-12 mx-auto user-table">
             <div class="user-table">
@@ -32,4 +37,3 @@
       </div>
     </div>
 </div>
-  <%= render 'layouts/footer' %>
