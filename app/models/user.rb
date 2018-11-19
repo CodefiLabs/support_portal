@@ -3,6 +3,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
   belongs_to :client
   belongs_to :agency
+  has_many :categories
   def set_default_role
     self.role ||= :user
   end

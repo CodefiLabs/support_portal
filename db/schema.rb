@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_212310) do
+ActiveRecord::Schema.define(version: 2018_11_19_221048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -188,7 +188,9 @@ ActiveRecord::Schema.define(version: 2018_11_19_212310) do
     t.integer "role"
     t.bigint "agency_id"
     t.bigint "client_id"
+    t.bigint "category_id"
     t.index ["agency_id"], name: "index_users_on_agency_id"
+    t.index ["category_id"], name: "index_users_on_category_id"
     t.index ["client_id"], name: "index_users_on_client_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
@@ -206,5 +208,6 @@ ActiveRecord::Schema.define(version: 2018_11_19_212310) do
   add_foreign_key "tickets", "categories"
   add_foreign_key "tickets", "clients"
   add_foreign_key "users", "agencies"
+  add_foreign_key "users", "categories"
   add_foreign_key "users", "clients"
 end

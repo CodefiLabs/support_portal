@@ -16,6 +16,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
+    @categories = Category.all
   end
 
   def chart
@@ -28,6 +29,7 @@ class TicketsController < ApplicationController
   end
   # GET /tickets/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /tickets
