@@ -1,4 +1,4 @@
-  <div class="row">
+  <div class="row topbg">
       <% if user_signed_in? %>
 <div class="col-sm-4 logo"><a href="/dashboard"><%= image_tag("codefi_logo.svg", height: 'auto', width: '100') %></a></div>
       <% else %>
@@ -9,7 +9,13 @@
       <% if user_signed_in? %>
         <div class="col-sm-8 loginlink">
           <div class="pull-right">
+            <%= link_to('Dashboard', '/dashboard', class: 'navitem')  %>
+            <% if user_signed_in? %>
+            <%= link_to('Upgrade', '/pricing', class: 'navitem')  %>
+            <% else %>
             <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
+            <% end %>
+
             <%= link_to('Tickets', '/tickets', class: 'navitem')  %>
             <div class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= current_user.first_name %> <%= current_user.last_name %> <%= fa_icon "chevron-down" %><div class="dropdown-content">
             <a href="/users/edit">My Profile</a>
@@ -21,13 +27,17 @@
 
             <% if current_user.role == "superadmin" %>
                 <a href="/users/invitation/new">Manage Agencies</a>
+                <a href="/categories">Manage Categories</a>
 
               <% elsif current_user.role == "agencyadmin" %>
                   <a href="/users/invitation/new">Manage Clients</a>
+                  <a href="/categories">Manage Categories</a>
+
               <!-- End of clientadmin section -->
 
               <% elsif current_user.role == "clientadmin" %>
                   <a href="/users/invitation/new">Manage Users</a>
+                  <a href="/categories">Manage Categories</a>
               <!-- End of clientadmin section -->
 
         <% end %>
