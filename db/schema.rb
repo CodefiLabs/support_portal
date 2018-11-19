@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_021539) do
+ActiveRecord::Schema.define(version: 2018_11_15_025202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -82,13 +83,13 @@ ActiveRecord::Schema.define(version: 2018_11_15_021539) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "ticket_id_id"
-    t.bigint "user_id_id"
-    t.text "comment"
+    t.bigint "ticket_id"
+    t.bigint "user_id"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id_id"], name: "index_comments_on_ticket_id_id"
-    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
+    t.index ["ticket_id"], name: "index_comments_on_ticket_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -144,6 +145,7 @@ ActiveRecord::Schema.define(version: 2018_11_15_021539) do
     t.text "message"
     t.string "requester"
     t.datetime "date_requested"
+    t.string "upload"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_tickets_on_category_id"
     t.index ["client_id"], name: "index_tickets_on_client_id"
@@ -186,6 +188,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_021539) do
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
   add_foreign_key "categories", "clients"
+  add_foreign_key "comments", "tickets"
+  add_foreign_key "comments", "users"
   add_foreign_key "tickets", "categories"
   add_foreign_key "tickets", "clients"
   add_foreign_key "users", "agencies"

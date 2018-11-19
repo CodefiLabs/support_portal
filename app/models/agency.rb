@@ -19,5 +19,6 @@ class Agency < ApplicationRecord
   has_many :clients, :through => :agencies_clients
   has_many :priorities
   has_many :users
+  has_many :categories
 
 end

@@ -48,7 +48,6 @@ class TicketsController < ApplicationController
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json
   def update
-    
     respond_to do |format|
       if @ticket.update(ticket_params)
         format.html { redirect_to tickets_path, notice: 'Ticket was successfully updated.' }
@@ -78,6 +77,6 @@ class TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:id, :integer, :created_at, :update_at, :client_id, :reference, :project_id, :reference, :created_by, :reference, :internal_status, :external_status, :uploads, :title, :start_time, :datetime, :end_time, :total_time, :adjusted_time, :priority, :is_deleted, :message, :date_requested, :requester, :category)
+      params.require(:ticket).permit(:id, :integer, :created_at, :update_at, :client_id, :reference, :project_id, :reference, :created_by, :reference, :internal_status, :external_status, :uploads, :title, :start_time, :datetime, :end_time, :total_time, :adjusted_time, :priority, :is_deleted, :message, :date_requested, :requester, :category_id)
     end
 end
