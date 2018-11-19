@@ -11,26 +11,24 @@
           <div class="pull-right">
             <%= link_to('Pricing', '/pricing', class: 'navitem')  %>
             <%= link_to('Tickets', '/tickets', class: 'navitem')  %>
-      <div class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= current_user.first_name %> <%= current_user.last_name %> <%= fa_icon "chevron-down" %><div class="dropdown-content">
-         <a href="/users/edit">My Profile</a>
-      <% if current_user.role == "agencyadmin" %>
-         <a href="#">Company Profile</a>
-      <% elsif current_user.role == "clientadmin" %>
-         <a href="#">Company Profile</a>
-      <% end %>
+            <div class="dropdown"><img id="avatar" src="/assets/avatar.png" width="34px"/> <%= current_user.first_name %> <%= current_user.last_name %> <%= fa_icon "chevron-down" %><div class="dropdown-content">
+            <a href="/users/edit">My Profile</a>
+            <% if current_user.role == "agencyadmin" %>
+              <a href="#">Company Profile</a>
+            <% elsif current_user.role == "clientadmin" %>
+              <a href="#">Company Profile</a>
+            <% end %>
 
-      <% if current_user.role == "superadmin" %>
-          <a href="/users/invitation/new">Manage Agencies</a>
+            <% if current_user.role == "superadmin" %>
+                <a href="/users/invitation/new">Manage Agencies</a>
 
-        <% elsif current_user.role == "agencyadmin" %>
-             <a href="/users/invitation/new">Manage Clients</a>
-        <!-- End of clientadmin section -->
+              <% elsif current_user.role == "agencyadmin" %>
+                  <a href="/users/invitation/new">Manage Clients</a>
+              <!-- End of clientadmin section -->
 
-        <% elsif current_user.role == "clientadmin" %>
-            <a href="/users/invitation/new">Manage Users</a>
-        <!-- End of clientadmin section -->
-
-        <% else %>
+              <% elsif current_user.role == "clientadmin" %>
+                  <a href="/users/invitation/new">Manage Users</a>
+              <!-- End of clientadmin section -->
 
         <% end %>
         <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'signin_button1')  %>
