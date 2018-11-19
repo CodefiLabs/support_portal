@@ -15,3 +15,7 @@
  *= require font-awesome
  *= require_tree .
  */
+
+ .modal-backdrop{
+   z-index:unset;
+ }

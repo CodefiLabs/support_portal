@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   include UserCategoriesService
   before_action :set_category, except: [:index, :new, :create]
   def index
-    @categories = Category.all
+    user_category_ids = UserCategories.where(users_id: current_user.id).collect{|uc| uc[:categories_id]}
+    @categories = Category.where(id: user_category_ids)
   end
 
   def show;end
