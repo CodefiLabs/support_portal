@@ -24,6 +24,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    byebug
     if @category.save
       UserCategoriesService::assign_category(@category.id, @category.title, current_user.id)
       redirect_to categories_path, notice: "Category successfully created."
