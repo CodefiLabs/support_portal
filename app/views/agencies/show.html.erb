@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 <nav class="navigation">
   <ul><%= @agency.name %></li>
-<li><strong>Contact:</strong> <%= @agency.phone %></li>
+<li><strong>Contact:</strong> <%=number_to_phone(@agency.phone) %></li>
         <li><strong>Address:</strong><%= @agency.address1 %><br></li>
         <% if @agency.address2.present?%><li><%=@agency.address2%></li>
         <% end %>
@@ -11,6 +11,8 @@
         <%= link_to 'Delete', @agency,
                     class: 'button',
                     method: :delete, data: { confirm: 'Are you sure?' } %>|
+  <% if current_user.role == "superadmin" %>
       <a href="../agencies">View All</a>
+  <% end %>
 
       <%= render 'layouts/footer' %>
