@@ -1,18 +1,32 @@
 <%= render 'layouts/header' %>
-<nav class="navigation">
-  <ul><%= @agency.name %></li>
+<div class="row">
+<nav class="navigation col-12">
+  <ul><%= @agency.name %>
 <li><strong>Contact:</strong> <%=number_to_phone(@agency.phone) %></li>
         <li><strong>Address:</strong><%= @agency.address1 %><br></li>
         <% if @agency.address2.present?%><li><%=@agency.address2%></li>
         <% end %>
         <%= @agency.city %>, <%= @agency.state %> <%= @agency.zip %><br>
+        </ul>
 </nav>
-        <%= link_to 'Edit', edit_agency_path(@agency), class: 'button' %>|
-        <%= link_to 'Delete', @agency,
-                    class: 'button',
-                    method: :delete, data: { confirm: 'Are you sure?' } %>|
+</div>
+<div class="row">
+<%= button_to "Edit", { action: "edit"},
+method: :get,
+form_class: "col-6",
+                                class: 'btn btn-default col-12' %>
+
+  <%= button_to "Delete", { action: "destroy", id: @agency.id },
+  form_class: "col-6",
+                                  class: 'btn btn-default col-12',
+                                  method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
   <% if current_user.role == "superadmin" %>
-      <a href="../agencies">View All</a>
+  <br>
+  <div class="row">
+    <form action="../agencies" class="col-12">
+      <input type="submit" class="btn btn-default col-12" value="View All">
+      </div>
   <% end %>
 
       <%= render 'layouts/footer' %>
