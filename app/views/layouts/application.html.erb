@@ -45,10 +45,12 @@
 </script>
   <body>
     <div class="main-container">
-      <% url = request.original_url %>
-      <% if url == 'http://localhost:3000/' || 'http://localhost:3000/users/sign_in' %>
+    <% @url = request.fullpath %>
+    <% if @url == '/' %>
     <%= render 'layouts/headerhome' %>
-    <% else %>
+    <% elsif @url == '/users/sign_in'%>
+      <%= render 'layouts/headerhome' %>
+      <% else %>
     <%= render 'layouts/header' %>
       <% end %>
     <%= custom_bootstrap_flash %>

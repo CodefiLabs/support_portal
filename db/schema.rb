@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_221048) do
+ActiveRecord::Schema.define(version: 2018_11_19_212310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
-  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -88,13 +87,13 @@ ActiveRecord::Schema.define(version: 2018_11_19_221048) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "ticket_id"
-    t.bigint "user_id"
-    t.text "message"
+    t.bigint "ticket_id_id"
+    t.bigint "user_id_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id"], name: "index_comments_on_ticket_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["ticket_id_id"], name: "index_comments_on_ticket_id_id"
+    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -150,18 +149,15 @@ ActiveRecord::Schema.define(version: 2018_11_19_221048) do
     t.text "message"
     t.string "requester"
     t.datetime "date_requested"
-    t.string "upload"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_tickets_on_category_id"
     t.index ["client_id"], name: "index_tickets_on_client_id"
   end
 
   create_table "user_categories", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "categories_id"
+    t.integer "category_id"
+    t.integer "creator_id"
     t.string "category_title"
-    t.index ["categories_id"], name: "index_user_categories_on_categories_id"
-    t.index ["users_id"], name: "index_user_categories_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -188,9 +184,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_221048) do
     t.integer "role"
     t.bigint "agency_id"
     t.bigint "client_id"
-    t.bigint "category_id"
     t.index ["agency_id"], name: "index_users_on_agency_id"
-    t.index ["category_id"], name: "index_users_on_category_id"
     t.index ["client_id"], name: "index_users_on_client_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
@@ -203,11 +197,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_221048) do
   add_foreign_key "agencies_clients", "agencies", column: "agencies_id"
   add_foreign_key "agencies_clients", "clients", column: "clients_id"
   add_foreign_key "categories", "clients"
-  add_foreign_key "comments", "tickets"
-  add_foreign_key "comments", "users"
   add_foreign_key "tickets", "categories"
   add_foreign_key "tickets", "clients"
   add_foreign_key "users", "agencies"
-  add_foreign_key "users", "categories"
   add_foreign_key "users", "clients"
 end
