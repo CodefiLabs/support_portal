@@ -16,7 +16,7 @@
     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- Include external JS libs. -->
-   
+
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
 
@@ -41,7 +41,12 @@
 </script>
   <body>
     <div class="main-container">
+      <% url = request.original_url %>
+      <% if url == 'http://localhost:3000/' || 'http://localhost:3000/users/sign_in' %>
+    <%= render 'layouts/headerhome' %>
+    <% else %>
     <%= render 'layouts/header' %>
+      <% end %>
     <%= custom_bootstrap_flash %>
     <%= yield %>
 
